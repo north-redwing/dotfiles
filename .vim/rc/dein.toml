@@ -1,5 +1,5 @@
 [[plugins]]
-repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim' [[plugins]]
+repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim'
 repo = 'tpope/vim-surround'
  
 [[plugins]]
