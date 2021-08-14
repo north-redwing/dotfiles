@@ -1,0 +1,46 @@
+[[plugins]]
+repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim'
+ 
+[[plugins]]
+repo = 'tpope/vim-surround'
+ 
+[[plugins]]
+repo = 'tpope/vim-repeat'
+ 
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+ 
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+" powerline形式で表示
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline_theme = 'papercolor'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+ 
+[[plugins]]
+repo = 'kana/vim-operator-user'
+depends = ['vim-operator-replace']
+ 
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+ 
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+'''
