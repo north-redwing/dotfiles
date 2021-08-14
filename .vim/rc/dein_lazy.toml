@@ -14,6 +14,7 @@ let g:jedi#documentation_command = "K"
 autocmd FileType python setlocal completeopt-=preview
 let g:syntastic_python_checkers = ["flake8"] 
 '''
+ 
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = ['neomru.vim', 'neoyank.vim']

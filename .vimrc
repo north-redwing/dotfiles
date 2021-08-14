@@ -46,7 +46,11 @@ let mapleader = "\<Space>"
  
 " シンタックスハイライトon
 syntax enable
-" Tabで候補移動 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>" " commandの履歴の保存
+ 
+" Tabで候補移動
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+ 
+" commandの履歴の保存
 set history=10000
 
 " 文字コード
@@ -158,9 +162,6 @@ endif
 noremap x "_x
 nnoremap <S-x> "_X
 
-" freeze防止
-nnoremap q <Nop>
-
 " returnでnormal modeのまま空白行挿入
 nnoremap <CR> :normal o <CR>
 nnoremap <leader><CR> :normal O <CR>
@@ -185,8 +186,6 @@ nnoremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$
 nnoremap <S-y> y$
-" yankした文字列と対象の置換
-map R <Plug>(operator-replace)
 
 " indentが崩れぬようペースト
 nnoremap ,i :<C-u>set paste<Return>i
