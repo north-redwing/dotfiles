@@ -62,6 +62,8 @@ set backspace=indent,eol,start
 
 " backup作成off
 set nobackup
+"swapfileを生成しない
+set noswapfile 
 
 " マウスを使う
 set mouse=a
@@ -76,6 +78,18 @@ set list
 
 " 括弧の対応関係を表示
 set showmatch
+"l 閉じ括弧自動保管
+inoremap <leader>{ {}<LEFT>
+inoremap <leader>} {}<LEFT>
+inoremap <leader>[ []<LEFT>
+inoremap <leader>] []<LEFT>
+inoremap <leader>( ()<LEFT>
+inoremap <leader>) ()<LEFT>
+inoremap <leader>< <><LEFT>
+inoremap <leader>> <><LEFT>
+inoremap <leader>" ""<LEFT>
+inoremap <leader>' ''<LEFT>
+
 " 入力中のコマンドを表示
 set showcmd
 " modeの表示
@@ -112,8 +126,10 @@ inoremap <C-w> <C-\><C-O>w
 inoremap <C-b> <C-\><C-O>b
 
 " 行頭行末に移動
-noremap <S-h> ^
-noremap <S-l> $
+nnoremap <S-h> ^
+nnoremap <S-l> $
+vnoremap <S-h> ^
+vnoremap <S-l> $
 
 " insert modeから抜ける
 inoremap <silent> jj <Esc>
@@ -190,3 +206,14 @@ nnoremap <S-y> y$
 " indentが崩れぬようペースト
 nnoremap ,i :<C-u>set paste<Return>i
 autocmd InsertLeave * set nopaste
+
+" Save fold settings.
+autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
+" Don't save options.
+set viewoptions-=options
+set foldmethod=indent
+" ファイルを開いたときにデフォルトで折りたたむレベル
+set foldlevel=1
+" 左端に折りたたみ状態を表示する領域を追加する 
+" set foldcolumn=3
