@@ -140,5 +140,5 @@ case $TERM in
     *)     LANG=ja_JP.UTF-8;;
 esac
 
-source /home/xxx/anaconda3/etc/profile.d/conda.sh
+source /home/narita/anaconda3/etc/profile.d/conda.sh
 conda activate RL

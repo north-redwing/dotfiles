@@ -62,7 +62,6 @@ set backspace=indent,eol,start
 
 " backup作成off
 set nobackup
-"swapfileを生成しない
 set noswapfile 
 
 " マウスを使う
@@ -95,7 +94,8 @@ set showcmd
 " modeの表示
 set showmode
 " 右下に行番号と列番号を表示する
-set ruler
+" powerlineで表示されるので解除
+" set ruler
 
 " 行番号の表示
 " set rulerでわかるので不使用
@@ -173,7 +173,6 @@ if has('syntax')
      call ZenkakuSpace()
 endif
 
-
 " 削除をレジスタに入れない
 noremap x "_x
 nnoremap <S-x> "_X
@@ -206,14 +205,3 @@ nnoremap <S-y> y$
 " indentが崩れぬようペースト
 nnoremap ,i :<C-u>set paste<Return>i
 autocmd InsertLeave * set nopaste
-
-" Save fold settings.
-autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent loadview | endif
-" Don't save options.
-set viewoptions-=options
-set foldmethod=indent
-" ファイルを開いたときにデフォルトで折りたたむレベル
-set foldlevel=1
-" 左端に折りたたみ状態を表示する領域を追加する 
-" set foldcolumn=3
