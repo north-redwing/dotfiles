@@ -1,10 +1,10 @@
 #!/bin/sh
  
-if [ "$(uname)" == 'Darwin' ]; then
+if [ "$(uname)" = 'Darwin' ]; then
   OS='Mac'
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" = 'Linux' ]; then
   OS='Linux'
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+elif [ "$(expr substr $(uname -s) 1 10)" = 'MINGW32_NT' ]; then
   OS='Cygwin'
 else
   echo "Your platform ($(uname -a)) is not supported."
@@ -12,9 +12,9 @@ else
 fi
 
 # zsh install
-if [ $OS == 'Mac' ]; then
+if [ $OS = 'Mac' ]; then
   brew install zsh
-elif[ $OS == 'Linux' ]; then
+elif[ $OS = 'Linux' ]; then
   sudo apt install zsh
 fi
 chsh -s /bin/zsh
@@ -31,8 +31,8 @@ done
 # theme file
 curl https://raw.github.com/davidjrice/prezto_powerline/master/prompt_powerline_setup > ~/.zprezto/modules/prompt/functions/prompt_powerline_setup
 
-# ritchy powerline install
-if [ $OS == 'Mac' ]; then
+# font install
+if [ $OS = 'Mac' ]; then
   # tapでリポジトリを追加する
   brew tap sanemat/font
   # フォントのinstall
@@ -41,8 +41,8 @@ if [ $OS == 'Mac' ]; then
   cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
   # キャッシュの削除
   fc-cache -vf  
-elif[ $OS == 'Linux' ]; then
-    sudo apt install -y fonts-ricty-diminished
+elif[ $OS = 'Linux' ]; then
+  sudo apt install -y fonts-ricty-diminished
 fi
 
 # dein install
