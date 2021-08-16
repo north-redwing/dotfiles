@@ -40,16 +40,20 @@ if dein#check_install()
   call dein#install()
 endif
 "End dein Scripts-------------------------
- 
+
+"ビープ音すべてを無効にする
+set visualbell t_vb=
+set noerrorbells
+
 " leaderをスペースへ設定
 let mapleader = "\<Space>"
- 
+
 " シンタックスハイライトon
 syntax enable
- 
+
 " Tabで候補移動
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
- 
+
 " commandの履歴の保存
 set history=10000
 
@@ -77,17 +81,7 @@ set list
 
 " 括弧の対応関係を表示
 set showmatch
-"l 閉じ括弧自動保管
-inoremap <leader>{ {}<LEFT>
-inoremap <leader>} {}<LEFT>
-inoremap <leader>[ []<LEFT>
-inoremap <leader>] []<LEFT>
-inoremap <leader>( ()<LEFT>
-inoremap <leader>) ()<LEFT>
-inoremap <leader>< <><LEFT>
-inoremap <leader>> <><LEFT>
-inoremap <leader>" ""<LEFT>
-inoremap <leader>' ''<LEFT>
+noremap m %
 
 " 入力中のコマンドを表示
 set showcmd
@@ -140,8 +134,8 @@ inoremap <silent> jk <ESC>
 set autowrite
 set hidden
 
-" bufferの全てを保存
-nnoremap ZZ :wqa <CR>
+" bufferの全てを変更があれば保存
+nnoremap <leader>w :xa <CR>
 
 " buffer切り替え
 nnoremap <silent> bp :bprev<CR>
@@ -178,8 +172,8 @@ noremap x "_x
 nnoremap <S-x> "_X
 
 " returnでnormal modeのまま空白行挿入
-nnoremap <CR> :normal o <CR>
-nnoremap <leader><CR> :normal O <CR>
+nnoremap <CR> A<CR><ESC>
+nnoremap <leader><CR> A<Up><CR><ESC>
 
 " 数字の増減
 nnoremap + <C-a>
@@ -205,3 +199,16 @@ nnoremap <S-y> y$
 " indentが崩れぬようペースト
 nnoremap ,i :<C-u>set paste<Return>i
 autocmd InsertLeave * set nopaste
+
+" カーソル位置記憶
+if has("autocmd")
+  augroup redhat
+    " In text files, always limit the width of text to 78 characters
+    autocmd BufRead *.txt set tw=78
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+  augroup END
+endif

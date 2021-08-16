@@ -1,6 +1,7 @@
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = ['python']
+on_i = 1
 hook_add = '''
  " 補完のコマンドmapping
 let g:jedi#completions_command = "<leader>p"
@@ -14,7 +15,7 @@ let g:jedi#documentation_command = "K"
 autocmd FileType python setlocal completeopt-=preview
 let g:syntastic_python_checkers = ["flake8"] 
 '''
- 
+
 [[plugins]]
 repo = 'Shougo/unite.vim'
 depends = ['neomru.vim', 'neoyank.vim']
@@ -83,11 +84,35 @@ endfunction"}}}
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim']
- 
+
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
 on_source = ['unite.vim']
- 
+
 [[plugins]]
 repo = 'scrooloose/syntastic'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '/usr/bin/python3'
+'''
+
+[[plugins]]
+repo ='cespare/vim-toml'
+on_ft =['toml']
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_cmd = ['help']
+
+[[plugins]]
+repo = 'voithos/vim-python-matchit'
 on_ft = ['python']
