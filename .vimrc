@@ -119,6 +119,34 @@ inoremap <C-l> <Right>
 inoremap <C-w> <C-\><C-O>w
 inoremap <C-b> <C-\><C-O>b
 
+" 括弧系の補完
+inoremap ' ''<Left>
+inoremap " ""<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap < <><Left>
+inoremap { {}<Left>
+inoremap ] []<Left>
+inoremap ) ()<Left>
+inoremap > <><Left>
+inoremap } {}<Left>
+" 括弧系を通常通り入力
+inoremap '' '
+inoremap "" "
+inoremap [[ [
+inoremap (( (
+inoremap << <
+inoremap {{ {
+inoremap ]] ]
+inoremap )) )
+inoremap >> >
+inoremap }} }
+
+" 貼り付けたテキストの末尾へ自動的に移動
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
 " 行頭行末に移動
 nnoremap <S-h> ^
 nnoremap <S-l> $
