@@ -163,7 +163,13 @@ set autowrite
 set hidden
 
 " bufferの全てを変更があれば保存
-nnoremap <leader>w :xa <CR>
+nnoremap <leader>x :xa <CR>
+nnoremap <leader>w :wa <CR>
+nnoremap <leader>q :qa! <CR>
+nnoremap <leader>c <Nop>
+
+" ipython実行
+nnoremap <leader>i :!ipython3 <CR>
 
 " buffer切り替え
 nnoremap <silent> bp :bprev<CR>
