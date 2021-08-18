@@ -54,14 +54,14 @@ alias lst='ls -ltr'
 alias l='ls -ltr'
 alias la='ls -a'
 alias ll='ls -l'
-alias vi='vim'
+alias vim='nvim'
+alias vi='nvim'
 alias vz='vim ~/.zshrc'
-alias vv='vim ~/.vimrc ~/.vim/rc/dein.toml ~/.vim/rc/dein_lazy.toml'
+alias vv='vim ~/.config/nvim/*'
 alias vt='vim ~/.tmux.conf'
-alias c='clear'
 alias sz='source ~/.zshrc'
-alias sv='source ~/.vimrc'
 alias st='source ~/.tmux.conf'
+alias c='clear'
 alias mkdir='mkdir -p'
 alias rm='rm -i'
 alias ..='cd ..'
@@ -140,5 +140,7 @@ case $TERM in
     *)     LANG=ja_JP.UTF-8;;
 esac
 
-source /home/narita/anaconda3/etc/profile.d/conda.sh
+source $HOME/anaconda3/etc/profile.d/conda.sh
 conda activate RL
+
+export XDG_CONFIG_HOME=$HOME/.config
