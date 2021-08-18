@@ -1,0 +1,90 @@
+[[plugins]]
+repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim'
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+hook_add = '''
+" powerline形式で表示
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline_theme = 'papercolor'
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+depends = ['vim-operator-replace']
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+hook_add = '''
+" yankした文字列と対象の置換
+map R <Plug>(operator-replace)
+'''
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = '''
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <C-p> <Plug>(yankround-prev)
+nmap <C-n> <Plug>(yankround-next)
+'''
+
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+let g:indentLine_char = '|'
+'''
+
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+hook_add ='''
+" 大文字小文字を無視
+let g:clever_f_ignore_case = 1
+" 任意の記号にマッチする文字を設定
+let g:clever_f_chars_match_any_signs = ';'
+'''
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+hook_add = '''
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+'''
+
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+hook_add = '''
+nmap j <Plug>(accelerated_jk_gj)
+nmap k <Plug>(accelerated_jk_gk)
+let g:accelerated_jk_acceleration_limit = 1
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'

@@ -1,0 +1,886 @@
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- VIM STARTING ---
+000.267  000.259: Allocated generic buffers
+000.416  000.149: locale set
+000.423  000.007: window checked
+001.485  001.062: inits 1
+001.528  000.043: parsing arguments
+001.531  000.003: expanding arguments
+001.562  000.031: shell init
+002.149  000.587: Termcap init
+002.188  000.039: inits 2
+002.600  000.412: init highlight
+003.358  000.560  000.560: sourcing /usr/share/vim/vim82/debian.vim
+006.479  002.631  002.631: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+006.778  003.104  000.473: sourcing /usr/share/vim/vim82/syntax/synload.vim
+018.970  012.114  012.114: sourcing /usr/share/vim/vim82/filetype.vim
+020.186  000.805  000.805: sourcing /usr/share/vim/vim82/scripts.vim
+020.266  016.755  000.732: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+020.321  017.668  000.353: sourcing $VIM/vimrc
+020.678  000.231  000.231: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+022.207  000.566  000.566: sourcing /usr/share/vim/vim82/ftoff.vim
+023.381  000.314  000.314: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+024.102  000.557  000.557: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+024.553  001.043  000.486: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+024.841  001.381  000.338: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+026.081  005.056  002.795: sourcing /home/narita/.cache/dein/state_vim.vim
+026.501  000.078  000.078: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+026.791  000.127  000.127: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+026.894  000.322  000.195: sourcing /usr/share/vim/vim82/syntax/synload.vim
+032.175  000.032  000.032: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+032.288  005.349  005.317: sourcing /usr/share/vim/vim82/filetype.vim
+033.081  000.533  000.533: sourcing /usr/share/vim/vim82/scripts.vim
+033.142  006.760  000.478: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+033.536  013.188  001.141: sourcing $HOME/.vimrc
+033.539  000.083: sourcing vimrc file(s)
+033.867  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+034.224  000.091  000.091: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+034.681  000.129  000.129: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+034.917  000.018  000.018: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+036.243  000.235  000.235: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+036.344  002.467  001.994: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+036.512  000.149  000.149: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+036.603  000.077  000.077: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+036.875  000.192  000.192: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+036.950  000.334  000.142: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+037.097  000.078  000.078: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+037.165  000.193  000.115: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+037.563  000.386  000.386: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+037.744  000.166  000.166: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+038.138  000.378  000.378: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+038.350  000.054  000.054: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+038.556  000.197  000.197: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+038.749  000.179  000.179: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+038.797  000.019  000.019: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+038.953  000.144  000.144: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+039.420  000.452  000.452: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+039.460  000.009  000.009: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+039.493  000.018  000.018: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+039.635  000.130  000.130: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+039.723  000.069  000.069: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+039.872  000.137  000.137: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+040.035  000.138  000.138: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+040.038  000.755: loading plugins
+040.097  000.059: loading packages
+040.520  000.354  000.354: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+040.558  000.006  000.006: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+040.588  000.131: loading after plugins
+040.594  000.006: inits 3
+042.267  001.673: reading viminfo
+042.278  000.011: setting raw mode
+042.281  000.003: start termcap
+042.291  000.010: clearing screen
+042.962  000.240  000.240: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+043.108  000.040  000.040: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+043.324  000.140  000.140: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+043.502  000.023  000.023: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+043.756  000.044  000.044: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+044.063  000.163  000.163: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+044.340  000.715  000.508: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+044.750  000.096  000.096: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+045.038  000.049  000.049: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+045.211  000.066  000.066: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+045.444  000.132  000.132: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+045.585  000.034  000.034: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+045.844  000.069  000.069: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+046.096  000.122  000.122: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+046.328  000.021  000.021: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+046.529  000.030  000.030: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+050.999  000.047  000.047: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+051.196  000.304  000.257: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+053.647  000.210  000.210: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+073.269  000.114  000.114: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+073.631  000.060  000.060: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+092.649  047.893: opening buffers
+092.663  000.014: BufEnter autocommands
+092.665  000.002: editing files in windows
+092.805  000.140: VimEnter autocommands
+092.806  000.001: before starting main loop
+093.295  000.090  000.090: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+093.561  000.080  000.080: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+094.083  000.098  000.098: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+094.342  000.043  000.043: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+096.909  000.035  000.035: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+100.728  007.576: first screen update
+100.729  000.001: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- VIM STARTING ---
+000.252  000.245: Allocated generic buffers
+000.376  000.124: locale set
+000.382  000.006: window checked
+001.479  001.097: inits 1
+001.519  000.040: parsing arguments
+001.522  000.003: expanding arguments
+001.550  000.028: shell init
+002.105  000.555: Termcap init
+002.145  000.040: inits 2
+002.543  000.398: init highlight
+003.254  000.519  000.519: sourcing /usr/share/vim/vim82/debian.vim
+006.281  002.558  002.558: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+006.661  003.109  000.551: sourcing /usr/share/vim/vim82/syntax/synload.vim
+019.652  012.869  012.869: sourcing /usr/share/vim/vim82/filetype.vim
+020.812  000.809  000.809: sourcing /usr/share/vim/vim82/scripts.vim
+020.888  017.495  000.708: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+020.915  018.323  000.309: sourcing $VIM/vimrc
+021.264  000.231  000.231: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+022.654  000.491  000.491: sourcing /usr/share/vim/vim82/ftoff.vim
+023.814  000.314  000.314: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+024.526  000.551  000.551: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+024.974  001.032  000.481: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+025.258  001.366  000.334: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+026.497  004.895  002.724: sourcing /home/narita/.cache/dein/state_vim.vim
+026.901  000.077  000.077: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+027.242  000.187  000.187: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+027.393  000.421  000.234: sourcing /usr/share/vim/vim82/syntax/synload.vim
+033.138  000.030  000.030: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+033.236  005.778  005.748: sourcing /usr/share/vim/vim82/filetype.vim
+034.000  000.515  000.515: sourcing /usr/share/vim/vim82/scripts.vim
+034.057  007.273  000.482: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+034.448  013.508  001.109: sourcing $HOME/.vimrc
+034.451  000.077: sourcing vimrc file(s)
+034.761  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+035.111  000.091  000.091: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+035.560  000.123  000.123: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+035.795  000.016  000.016: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+037.137  000.236  000.236: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+037.226  002.456  001.990: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+037.392  000.149  000.149: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+037.484  000.077  000.077: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+037.804  000.245  000.245: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+037.904  000.406  000.161: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+038.089  000.103  000.103: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+038.180  000.255  000.152: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+038.695  000.501  000.501: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+038.933  000.221  000.221: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+039.334  000.384  000.384: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+039.535  000.054  000.054: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+039.734  000.190  000.190: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+039.919  000.173  000.173: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+039.967  000.019  000.019: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+040.114  000.138  000.138: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+040.556  000.429  000.429: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+040.593  000.008  000.008: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+040.626  000.017  000.017: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+040.786  000.148  000.148: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+040.872  000.068  000.068: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+041.036  000.152  000.152: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+041.192  000.135  000.135: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+041.195  000.716: loading plugins
+041.251  000.056: loading packages
+041.649  000.337  000.337: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+041.681  000.006  000.006: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+041.710  000.116: loading after plugins
+041.716  000.006: inits 3
+043.088  001.372: reading viminfo
+043.099  000.011: setting raw mode
+043.102  000.003: start termcap
+043.109  000.007: clearing screen
+043.707  000.223  000.223: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+043.847  000.037  000.037: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+044.050  000.133  000.133: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+044.217  000.023  000.023: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+044.454  000.045  000.045: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+044.796  000.201  000.201: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+045.079  000.753  000.507: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+045.508  000.101  000.101: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+045.804  000.052  000.052: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+045.990  000.066  000.066: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+046.221  000.132  000.132: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+046.361  000.034  000.034: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+046.618  000.070  000.070: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+046.867  000.121  000.121: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+047.097  000.021  000.021: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+047.291  000.029  000.029: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+051.684  000.046  000.046: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+051.882  000.302  000.256: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+054.293  000.212  000.212: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+074.065  000.113  000.113: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+074.422  000.060  000.060: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+093.357  047.766: opening buffers
+093.371  000.014: BufEnter autocommands
+093.372  000.001: editing files in windows
+093.515  000.143: VimEnter autocommands
+093.516  000.001: before starting main loop
+094.005  000.085  000.085: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+094.258  000.073  000.073: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+094.753  000.097  000.097: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+095.008  000.042  000.042: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+097.564  000.035  000.035: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+101.271  007.423: first screen update
+101.272  000.001: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.009  000.009: --- VIM STARTING ---
+000.324  000.315: Allocated generic buffers
+000.479  000.155: locale set
+000.486  000.007: window checked
+001.688  001.202: inits 1
+001.731  000.043: parsing arguments
+001.734  000.003: expanding arguments
+001.768  000.034: shell init
+002.384  000.616: Termcap init
+002.425  000.041: inits 2
+002.885  000.460: init highlight
+003.656  000.564  000.564: sourcing /usr/share/vim/vim82/debian.vim
+006.163  002.021  002.021: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+006.418  002.451  000.430: sourcing /usr/share/vim/vim82/syntax/synload.vim
+018.930  012.428  012.428: sourcing /usr/share/vim/vim82/filetype.vim
+020.271  000.891  000.891: sourcing /usr/share/vim/vim82/scripts.vim
+020.361  016.560  000.790: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+020.392  017.451  000.327: sourcing $VIM/vimrc
+020.785  000.257  000.257: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+021.544  000.348  000.348: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+022.270  000.643  000.643: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+023.226  000.624  000.624: sourcing /usr/share/vim/vim82/ftoff.vim
+024.415  000.500  000.500: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+024.739  000.881  000.381: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+025.147  000.284  000.284: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/toml.vim
+107.446  000.201  000.201: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+108.336  000.468  000.468: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+108.710  001.086  000.618: sourcing /usr/share/vim/vim82/syntax/synload.vim
+124.394  000.070  000.070: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+124.619  015.747  015.677: sourcing /usr/share/vim/vim82/filetype.vim
+126.445  001.280  001.280: sourcing /usr/share/vim/vim82/scripts.vim
+126.583  019.441  001.127: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+127.234  106.814  084.336: sourcing $HOME/.vimrc
+127.239  000.089: sourcing vimrc file(s)
+127.756  000.073  000.073: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+128.449  000.179  000.179: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+129.222  000.230  000.230: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+129.615  000.028  000.028: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+131.652  000.277  000.277: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+131.818  004.045  003.331: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+132.106  000.255  000.255: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+132.254  000.125  000.125: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+132.743  000.365  000.365: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+132.900  000.624  000.259: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+133.207  000.175  000.175: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+133.358  000.428  000.253: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+134.239  000.843  000.843: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+134.642  000.372  000.372: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+135.392  000.718  000.718: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+135.824  000.122  000.122: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+136.234  000.389  000.389: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+136.657  000.369  000.369: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+136.731  000.042  000.042: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+136.948  000.203  000.203: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+137.587  000.619  000.619: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+137.641  000.012  000.012: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+137.688  000.025  000.025: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+137.894  000.188  000.188: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+138.023  000.100  000.100: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+138.229  000.188  000.188: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+138.473  000.202  000.202: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+138.478  001.297: loading plugins
+138.562  000.084: loading packages
+139.143  000.485  000.485: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+139.195  000.009  000.009: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+139.239  000.183: loading after plugins
+139.247  000.008: inits 3
+141.664  002.417: reading viminfo
+141.681  000.017: setting raw mode
+141.685  000.004: start termcap
+141.696  000.011: clearing screen
+142.559  000.326  000.326: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+142.763  000.054  000.054: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+143.065  000.196  000.196: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+143.312  000.033  000.033: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+143.671  000.068  000.068: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+144.138  000.237  000.237: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+144.536  001.059  000.754: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+145.138  000.143  000.143: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+145.525  000.070  000.070: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+145.777  000.097  000.097: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+146.118  000.190  000.190: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+146.326  000.051  000.051: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+146.677  000.099  000.099: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+147.034  000.177  000.177: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+147.377  000.031  000.031: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+147.662  000.031  000.031: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+152.137  000.047  000.047: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+152.334  000.306  000.259: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+154.878  000.209  000.209: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+174.463  000.112  000.112: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+174.829  000.061  000.061: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+193.764  048.823: opening buffers
+193.778  000.014: BufEnter autocommands
+193.780  000.002: editing files in windows
+193.921  000.141: VimEnter autocommands
+193.922  000.001: before starting main loop
+194.420  000.089  000.089: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+194.700  000.081  000.081: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+195.209  000.098  000.098: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+195.469  000.042  000.042: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+198.035  000.036  000.036: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+201.810  007.542: first screen update
+201.811  000.001: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.008  000.008: --- VIM STARTING ---
+000.292  000.284: Allocated generic buffers
+000.426  000.134: locale set
+000.433  000.007: window checked
+001.615  001.182: inits 1
+001.657  000.042: parsing arguments
+001.659  000.002: expanding arguments
+001.692  000.033: shell init
+002.315  000.623: Termcap init
+002.355  000.040: inits 2
+002.789  000.434: init highlight
+003.533  000.529  000.529: sourcing /usr/share/vim/vim82/debian.vim
+006.605  002.591  002.591: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+007.001  003.161  000.570: sourcing /usr/share/vim/vim82/syntax/synload.vim
+020.469  013.342  013.342: sourcing /usr/share/vim/vim82/filetype.vim
+021.671  000.792  000.792: sourcing /usr/share/vim/vim82/scripts.vim
+021.751  018.072  000.777: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+021.779  018.939  000.338: sourcing $VIM/vimrc
+022.137  000.232  000.232: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+022.842  000.328  000.328: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+023.491  000.574  000.574: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+024.343  000.550  000.550: sourcing /usr/share/vim/vim82/ftoff.vim
+025.429  000.453  000.453: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+025.727  000.803  000.350: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+026.146  000.307  000.307: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/toml.vim
+127.312  000.205  000.205: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+128.166  000.467  000.467: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+128.553  001.062  000.595: sourcing /usr/share/vim/vim82/syntax/synload.vim
+145.505  000.073  000.073: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+145.717  016.999  016.926: sourcing /usr/share/vim/vim82/filetype.vim
+147.438  001.218  001.218: sourcing /usr/share/vim/vim82/scripts.vim
+147.566  020.564  001.080: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+148.393  126.588  103.230: sourcing $HOME/.vimrc
+148.399  000.083: sourcing vimrc file(s)
+149.092  000.096  000.096: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+150.035  000.243  000.243: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+151.115  000.309  000.309: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+151.612  000.023  000.023: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+153.450  000.249  000.249: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+153.581  004.465  003.641: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+153.834  000.229  000.229: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+153.967  000.112  000.112: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+154.410  000.326  000.326: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+154.557  000.570  000.244: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+154.839  000.154  000.154: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+154.974  000.391  000.237: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+155.754  000.751  000.751: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+156.113  000.331  000.331: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+156.785  000.643  000.643: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+157.176  000.101  000.101: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+157.533  000.338  000.338: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+157.911  000.329  000.329: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+157.975  000.038  000.038: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+158.269  000.275  000.275: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+159.106  000.813  000.813: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+159.175  000.016  000.016: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+159.238  000.036  000.036: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+159.518  000.257  000.257: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+159.687  000.136  000.136: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+159.975  000.264  000.264: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+160.288  000.270  000.270: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+160.295  001.435: loading plugins
+160.402  000.107: loading packages
+161.178  000.649  000.649: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+161.242  000.012  000.012: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+161.299  000.236: loading after plugins
+161.310  000.011: inits 3
+163.431  002.121: reading viminfo
+163.444  000.013: setting raw mode
+163.447  000.003: start termcap
+163.459  000.012: clearing screen
+164.249  000.288  000.288: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+164.433  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+164.703  000.177  000.177: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+164.924  000.030  000.030: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+165.244  000.061  000.061: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+165.644  000.210  000.210: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+166.000  000.930  000.659: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+166.540  000.128  000.128: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+166.905  000.064  000.064: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+167.131  000.087  000.087: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+167.438  000.172  000.172: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+167.624  000.045  000.045: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+167.951  000.090  000.090: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+168.277  000.160  000.160: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+168.586  000.028  000.028: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+168.843  000.039  000.039: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+173.985  000.046  000.046: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+174.180  000.300  000.254: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+176.666  000.211  000.211: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+196.370  000.110  000.110: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+196.731  000.060  000.060: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+215.727  049.301: opening buffers
+215.741  000.014: BufEnter autocommands
+215.743  000.002: editing files in windows
+215.894  000.151: VimEnter autocommands
+215.895  000.001: before starting main loop
+216.390  000.090  000.090: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+216.670  000.082  000.082: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+217.180  000.099  000.099: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+217.442  000.042  000.042: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+220.007  000.036  000.036: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+223.818  007.574: first screen update
+223.820  000.002: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.007  000.007: --- VIM STARTING ---
+000.262  000.255: Allocated generic buffers
+000.386  000.124: locale set
+000.392  000.006: window checked
+001.534  001.142: inits 1
+001.574  000.040: parsing arguments
+001.577  000.003: expanding arguments
+001.607  000.030: shell init
+002.113  000.506: Termcap init
+002.153  000.040: inits 2
+002.542  000.389: init highlight
+003.293  000.533  000.533: sourcing /usr/share/vim/vim82/debian.vim
+005.908  002.129  002.129: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+006.156  002.551  000.422: sourcing /usr/share/vim/vim82/syntax/synload.vim
+018.754  012.513  012.513: sourcing /usr/share/vim/vim82/filetype.vim
+020.062  000.873  000.873: sourcing /usr/share/vim/vim82/scripts.vim
+020.149  016.708  000.771: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+020.179  017.587  000.346: sourcing $VIM/vimrc
+020.579  000.261  000.261: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+022.222  000.582  000.582: sourcing /usr/share/vim/vim82/ftoff.vim
+023.476  000.350  000.350: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+024.277  000.619  000.619: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+024.772  001.152  000.533: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+025.094  001.530  000.378: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+026.054  005.062  002.600: sourcing /home/narita/.cache/dein/state_vim.vim
+026.377  000.059  000.059: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+026.633  000.137  000.137: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+026.746  000.313  000.176: sourcing /usr/share/vim/vim82/syntax/synload.vim
+032.670  000.036  000.036: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+032.778  005.982  005.946: sourcing /usr/share/vim/vim82/filetype.vim
+033.655  000.592  000.592: sourcing /usr/share/vim/vim82/scripts.vim
+033.721  007.433  000.487: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+034.244  014.036  001.280: sourcing $HOME/.vimrc
+034.247  000.082: sourcing vimrc file(s)
+034.608  000.050  000.050: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+034.990  000.102  000.102: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+035.509  000.152  000.152: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+035.768  000.016  000.016: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+036.839  000.182  000.182: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+036.912  002.293  001.841: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+037.035  000.107  000.107: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+037.101  000.055  000.055: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+037.365  000.188  000.188: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+037.436  000.325  000.137: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+037.577  000.076  000.076: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+037.642  000.187  000.111: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+038.036  000.382  000.382: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+038.207  000.155  000.155: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+038.580  000.356  000.356: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+038.786  000.048  000.048: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+038.986  000.190  000.190: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+039.166  000.167  000.167: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+039.220  000.018  000.018: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+039.371  000.139  000.139: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+039.810  000.423  000.423: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+039.848  000.008  000.008: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+039.883  000.019  000.019: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+040.028  000.133  000.133: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+040.120  000.070  000.070: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+040.261  000.129  000.129: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+040.434  000.145  000.145: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+040.437  000.791: loading plugins
+040.497  000.060: loading packages
+040.953  000.386  000.386: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+040.993  000.006  000.006: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+041.024  000.135: loading after plugins
+041.030  000.006: inits 3
+042.794  001.764: reading viminfo
+042.806  000.012: setting raw mode
+042.809  000.003: start termcap
+042.816  000.007: clearing screen
+043.496  000.237  000.237: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+043.644  000.039  000.039: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+043.859  000.141  000.141: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+044.036  000.024  000.024: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+044.291  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+044.623  000.174  000.174: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+044.893  000.741  000.519: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+045.308  000.098  000.098: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+045.602  000.049  000.049: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+045.773  000.066  000.066: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+046.008  000.134  000.134: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+046.150  000.034  000.034: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+046.411  000.070  000.070: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+046.664  000.120  000.120: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+046.901  000.021  000.021: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+047.100  000.030  000.030: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+051.549  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+051.747  000.310  000.262: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+054.260  000.212  000.212: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+074.029  000.112  000.112: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+074.391  000.060  000.060: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+093.424  048.110: opening buffers
+093.438  000.014: BufEnter autocommands
+093.440  000.002: editing files in windows
+093.548  000.108: VimEnter autocommands
+093.549  000.001: before starting main loop
+094.025  000.084  000.084: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+094.277  000.075  000.075: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+094.763  000.096  000.096: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+095.021  000.042  000.042: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+097.611  000.035  000.035: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+101.367  007.486: first screen update
+101.368  000.001: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.005  000.005: --- VIM STARTING ---
+000.162  000.157: Allocated generic buffers
+000.259  000.097: locale set
+000.265  000.006: window checked
+000.963  000.698: inits 1
+001.004  000.041: parsing arguments
+001.006  000.002: expanding arguments
+001.022  000.016: shell init
+001.322  000.300: Termcap init
+001.344  000.022: inits 2
+001.566  000.222: init highlight
+001.997  000.305  000.305: sourcing /usr/share/vim/vim82/debian.vim
+003.799  001.522  001.522: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+004.000  001.825  000.303: sourcing /usr/share/vim/vim82/syntax/synload.vim
+020.802  016.732  016.732: sourcing /usr/share/vim/vim82/filetype.vim
+022.297  000.938  000.938: sourcing /usr/share/vim/vim82/scripts.vim
+022.394  020.314  000.819: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+022.428  020.831  000.212: sourcing $VIM/vimrc
+022.842  000.271  000.271: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+023.634  000.354  000.354: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+024.330  000.620  000.620: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+025.414  000.771  000.771: sourcing /usr/share/vim/vim82/ftoff.vim
+026.545  000.496  000.496: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+026.866  000.871  000.375: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+027.346  000.366  000.366: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/toml.vim
+134.432  000.083  000.083: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+134.844  000.213  000.213: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+135.002  000.475  000.262: sourcing /usr/share/vim/vim82/syntax/synload.vim
+143.467  000.043  000.043: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+143.608  008.522  008.479: sourcing /usr/share/vim/vim82/filetype.vim
+144.809  000.803  000.803: sourcing /usr/share/vim/vim82/scripts.vim
+144.893  010.586  000.703: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+145.435  122.977  109.138: sourcing $HOME/.vimrc
+145.439  000.065: sourcing vimrc file(s)
+146.143  000.214  000.214: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/accelerated-jk.vim
+146.221  000.063  000.063: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+146.861  000.164  000.164: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+147.630  000.209  000.209: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+148.015  000.019  000.019: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+149.945  000.268  000.268: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+150.071  003.836  003.176: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+150.307  000.215  000.215: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+150.438  000.111  000.111: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+150.903  000.331  000.331: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+151.040  000.579  000.248: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+151.330  000.154  000.154: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+151.456  000.391  000.237: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+152.242  000.757  000.757: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+152.604  000.336  000.336: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+155.917  003.287  003.287: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+156.288  000.096  000.096: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+156.653  000.323  000.323: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+157.014  000.329  000.329: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+157.074  000.033  000.033: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+157.363  000.273  000.273: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+158.111  000.725  000.725: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+158.166  000.015  000.015: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+158.226  000.035  000.035: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+158.472  000.224  000.224: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+158.654  000.145  000.145: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+158.911  000.233  000.233: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+159.215  000.261  000.261: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+159.221  001.301: loading plugins
+159.332  000.111: loading packages
+160.092  000.644  000.644: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+160.150  000.011  000.011: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+160.206  000.219: loading after plugins
+160.218  000.012: inits 3
+162.977  002.759: reading viminfo
+162.995  000.018: setting raw mode
+2842.169  2679.174: waiting for return
+2842.176  000.007: start termcap
+2842.195  000.019: clearing screen
+2843.929  000.586  000.586: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+2844.340  000.098  000.098: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+2844.858  000.322  000.322: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+2845.251  000.047  000.047: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+2845.830  000.098  000.098: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+2846.525  000.350  000.350: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+2847.191  001.676  001.228: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+2848.378  000.236  000.236: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+2849.172  000.108  000.108: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+2849.577  000.144  000.144: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+2850.130  000.293  000.293: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+2850.462  000.087  000.087: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+2851.093  000.141  000.141: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+2851.770  000.324  000.324: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+2852.499  000.052  000.052: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+2853.040  000.076  000.076: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+2864.367  000.104  000.104: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+2864.884  000.768  000.664: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+2871.112  000.534  000.534: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+2926.763  000.313  000.313: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+2927.870  000.190  000.190: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+2986.372  138.182: opening buffers
+2986.410  000.038: BufEnter autocommands
+2986.413  000.003: editing files in windows
+2986.689  000.276: VimEnter autocommands
+2986.744  000.055: before starting main loop
+2988.118  000.223  000.223: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+2988.933  000.246  000.246: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+2990.498  000.284  000.284: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+2991.270  000.113  000.113: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+2997.894  000.074  000.074: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+3006.974  020.290: first screen update
+3006.977  000.003: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.005  000.005: --- VIM STARTING ---
+000.136  000.131: Allocated generic buffers
+000.217  000.081: locale set
+000.222  000.005: window checked
+000.796  000.574: inits 1
+000.826  000.030: parsing arguments
+000.826  000.000: expanding arguments
+000.840  000.014: shell init
+001.077  000.237: Termcap init
+001.095  000.018: inits 2
+001.247  000.152: init highlight
+001.576  000.222  000.222: sourcing /usr/share/vim/vim82/debian.vim
+002.928  001.146  001.146: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+003.080  001.373  000.227: sourcing /usr/share/vim/vim82/syntax/synload.vim
+011.979  008.845  008.845: sourcing /usr/share/vim/vim82/filetype.vim
+013.230  000.819  000.819: sourcing /usr/share/vim/vim82/scripts.vim
+013.315  011.677  000.640: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+013.344  012.072  000.173: sourcing $VIM/vimrc
+013.702  000.233  000.233: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+015.288  000.600  000.600: sourcing /usr/share/vim/vim82/ftoff.vim
+016.045  002.025  001.425: sourcing /home/narita/.cache/dein/state_vim.vim
+016.435  000.310  000.310: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+017.073  000.563  000.563: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+018.315  000.473  000.473: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+018.635  000.843  000.370: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+019.083  000.334  000.334: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/toml.vim
+120.582  000.135  000.135: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+121.055  000.238  000.238: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+121.246  000.547  000.309: sourcing /usr/share/vim/vim82/syntax/synload.vim
+130.962  000.048  000.048: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+131.135  009.797  009.749: sourcing /usr/share/vim/vim82/filetype.vim
+132.610  000.913  000.913: sourcing /usr/share/vim/vim82/scripts.vim
+132.704  012.313  000.921: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+133.383  120.012  103.391: sourcing $HOME/.vimrc
+133.388  000.057: sourcing vimrc file(s)
+134.114  000.226  000.226: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/accelerated-jk.vim
+134.197  000.067  000.067: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+134.862  000.169  000.169: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+135.664  000.215  000.215: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+136.075  000.022  000.022: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+138.316  000.295  000.295: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+138.466  004.254  003.553: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+138.733  000.243  000.243: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+138.880  000.125  000.125: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+139.395  000.366  000.366: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+139.567  000.666  000.300: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+139.903  000.181  000.181: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+140.050  000.455  000.274: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+140.976  000.895  000.895: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+141.382  000.374  000.374: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+142.091  000.677  000.677: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+142.549  000.115  000.115: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+142.946  000.377  000.377: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+143.359  000.389  000.389: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+143.424  000.037  000.037: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+143.742  000.300  000.300: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+144.595  000.829  000.829: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+144.665  000.016  000.016: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+144.730  000.038  000.038: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+145.002  000.247  000.247: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+145.209  000.174  000.174: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+145.506  000.270  000.270: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+145.848  000.297  000.297: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+145.855  001.396: loading plugins
+145.976  000.121: loading packages
+146.846  000.732  000.732: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+146.914  000.012  000.012: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+146.979  000.259: loading after plugins
+146.993  000.014: inits 3
+150.052  003.059: reading viminfo
+150.076  000.024: setting raw mode
+2472.503  2322.427: waiting for return
+2472.510  000.007: start termcap
+2472.540  000.030: clearing screen
+2474.355  000.602  000.602: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+2474.772  000.086  000.086: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+2475.345  000.378  000.378: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+2475.870  000.063  000.063: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+2476.584  000.152  000.152: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+2477.350  000.391  000.391: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+2478.006  001.820  001.277: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+2479.047  000.233  000.233: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+2480.021  000.121  000.121: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+2480.589  000.285  000.285: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+2481.214  000.337  000.337: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+2481.605  000.086  000.086: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+2482.373  000.161  000.161: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+2483.206  000.323  000.323: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+2483.864  000.046  000.046: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+2484.466  000.102  000.102: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+2517.256  000.123  000.123: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+2517.777  000.819  000.696: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+2524.122  000.532  000.532: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+2630.162  000.247  000.247: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+2631.032  000.134  000.134: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+2730.389  251.474: opening buffers
+2730.432  000.043: BufEnter autocommands
+2730.475  000.043: editing files in windows
+2730.792  000.317: VimEnter autocommands
+2730.794  000.002: before starting main loop
+2732.125  000.217  000.217: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+2741.090  000.278  000.278: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+2742.720  000.369  000.369: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+2743.506  000.138  000.138: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+2757.721  000.096  000.096: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+2770.792  038.900: first screen update
+2770.797  000.005: --- VIM STARTED ---
+
+
+times in msec
+ clock   self+sourced   self:  sourced script
+ clock   elapsed:              other lines
+
+000.005  000.005: --- VIM STARTING ---
+000.165  000.160: Allocated generic buffers
+000.257  000.092: locale set
+000.263  000.006: window checked
+000.865  000.602: inits 1
+000.894  000.029: parsing arguments
+000.895  000.001: expanding arguments
+000.910  000.015: shell init
+001.203  000.293: Termcap init
+001.217  000.014: inits 2
+001.354  000.137: init highlight
+001.624  000.183  000.183: sourcing /usr/share/vim/vim82/debian.vim
+003.081  001.294  001.294: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+003.222  001.494  000.200: sourcing /usr/share/vim/vim82/syntax/synload.vim
+014.909  011.636  011.636: sourcing /usr/share/vim/vim82/filetype.vim
+016.351  000.971  000.971: sourcing /usr/share/vim/vim82/scripts.vim
+016.443  014.770  000.669: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+016.477  015.100  000.147: sourcing $VIM/vimrc
+016.901  000.280  000.280: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein.vim
+018.628  000.602  000.602: sourcing /usr/share/vim/vim82/ftoff.vim
+019.956  000.379  000.379: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/autoload.vim
+020.832  000.688  000.688: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/util.vim
+021.383  001.281  000.593: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/types/git.vim
+021.735  001.692  000.411: sourcing /home/narita/.cache/dein/repos/github.com/Shougo/dein.vim/autoload/dein/parse.vim
+023.162  005.893  003.220: sourcing /home/narita/.cache/dein/state_vim.vim
+023.648  000.087  000.087: sourcing /usr/share/vim/vim82/syntax/nosyntax.vim
+024.104  000.234  000.234: sourcing /usr/share/vim/vim82/syntax/syncolor.vim
+024.289  000.538  000.304: sourcing /usr/share/vim/vim82/syntax/synload.vim
+033.777  000.047  000.047: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/ftdetect/ftdetect.vim
+033.941  009.555  009.508: sourcing /usr/share/vim/vim82/filetype.vim
+035.242  000.910  000.910: sourcing /usr/share/vim/vim82/scripts.vim
+035.338  011.822  000.732: sourcing /usr/share/vim/vim82/syntax/syntax.vim
+035.942  019.436  001.441: sourcing $HOME/.vimrc
+035.945  000.055: sourcing vimrc file(s)
+036.685  000.225  000.225: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/accelerated-jk.vim
+036.769  000.068  000.068: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline-themes.vim
+037.390  000.163  000.163: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/init.vim
+038.196  000.208  000.208: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/parts.vim
+038.622  000.022  000.022: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/formatter/short_path.vim
+040.903  000.400  000.400: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/util.vim
+041.050  004.265  003.472: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/airline.vim
+041.337  000.257  000.257: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/clever-f.vim
+041.487  000.126  000.126: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/comfortable_motion.vim
+042.048  000.418  000.418: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/expand_region.vim
+042.203  000.694  000.276: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/expand_region.vim
+042.540  000.175  000.175: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/operator/user.vim
+042.683  000.444  000.269: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/operator/replace.vim
+043.591  000.884  000.884: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/surround.vim
+043.989  000.368  000.368: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/visualstar.vim
+044.677  000.655  000.655: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/plugin/yankround.vim
+045.094  000.111  000.111: sourcing /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+045.528  000.371  000.371: sourcing /usr/share/vim/vim82/plugin/gzip.vim
+045.933  000.381  000.381: sourcing /usr/share/vim/vim82/plugin/logiPat.vim
+045.999  000.038  000.038: sourcing /usr/share/vim/vim82/plugin/manpager.vim
+046.339  000.310  000.310: sourcing /usr/share/vim/vim82/plugin/matchparen.vim
+047.195  000.831  000.831: sourcing /usr/share/vim/vim82/plugin/netrwPlugin.vim
+047.258  000.016  000.016: sourcing /usr/share/vim/vim82/plugin/rrhelper.vim
+047.327  000.039  000.039: sourcing /usr/share/vim/vim82/plugin/spellfile.vim
+047.635  000.280  000.280: sourcing /usr/share/vim/vim82/plugin/tarPlugin.vim
+047.849  000.163  000.163: sourcing /usr/share/vim/vim82/plugin/tohtml.vim
+048.147  000.270  000.270: sourcing /usr/share/vim/vim82/plugin/vimballPlugin.vim
+048.531  000.321  000.321: sourcing /usr/share/vim/vim82/plugin/zipPlugin.vim
+048.538  001.476: loading plugins
+048.693  000.155: loading packages
+049.718  000.856  000.856: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/indentLine.vim
+049.799  000.014  000.014: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/after/plugin/yankround.vim
+049.866  000.303: loading after plugins
+049.879  000.013: inits 3
+053.323  003.444: reading viminfo
+053.350  000.027: setting raw mode
+053.359  000.009: start termcap
+053.375  000.016: clearing screen
+054.639  000.514  000.514: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions.vim
+054.969  000.086  000.086: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/quickfix.vim
+055.457  000.315  000.315: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline.vim
+055.848  000.044  000.044: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/netrw.vim
+056.429  000.101  000.101: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/section.vim
+057.136  000.364  000.364: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/highlighter.vim
+057.773  001.653  001.188: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/term.vim
+058.776  000.222  000.222: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/whitespace.vim
+059.279  000.110  000.110: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/po.vim
+059.686  000.148  000.148: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/wordcount.vim
+060.236  000.300  000.300: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline.vim
+060.570  000.077  000.077: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/autoshow.vim
+061.051  000.153  000.153: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabs.vim
+061.600  000.275  000.275: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buffers.vim
+062.118  000.044  000.044: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/keymap.vim
+062.602  000.065  000.065: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/searchcount.vim
+073.012  000.099  000.099: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes.vim
+073.479  000.708  000.609: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+079.628  000.492  000.492: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/themes/papercolor.vim
+150.240  000.320  000.320: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/builder.vim
+151.269  000.160  000.160: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/default.vim
+205.353  146.292: opening buffers
+205.390  000.037: BufEnter autocommands
+205.394  000.004: editing files in windows
+205.684  000.290: VimEnter autocommands
+205.685  000.001: before starting main loop
+206.985  000.218  000.218: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/ctrlspace.vim
+207.695  000.185  000.185: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/tabws.vim
+208.944  000.243  000.243: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/builder.vim
+209.651  000.104  000.104: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/buflist.vim
+216.282  000.081  000.081: sourcing /home/narita/.cache/dein/.cache/.vimrc/.dein/autoload/airline/extensions/tabline/formatters/default.vim
+226.421  019.905: first screen update
+226.424  000.003: --- VIM STARTED ---
