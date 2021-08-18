@@ -23,6 +23,7 @@ ln -sf ~/dotfiles/nvim/dein_lazy.toml ~/.config/nvim/dein_lazy.toml
 
 # zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+source ~/.zshrc
 
 # tmux
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
