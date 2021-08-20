@@ -70,6 +70,7 @@ alias pip='pip3'
 alias python='python3'
 alias open='xdg-open'
 alias ca='conda activate'
+alias ce='conda info -e'
 
 # prompt setting
 
@@ -109,12 +110,11 @@ bindkey -v
 function zle-line-init zle-keymap-select {
   case $KEYMAP in
     vicmd)
-    # PROMPT="%{$reset_color%}%n@jerky %{$reset_color%}%{$reset_color%}%~/
-    PROMPT="%{$reset_color%}%n@jerky %{${fg[yellow]}%}%~/
+    PROMPT="%{$reset_color%}%n@%m %{${fg[yellow]}%}%~/
 %{$reset_color%}[%{$fg_bold[red]%}NOR%{$reset_color%}%{$reset_color%}]$ "
     ;;
     main|viins)
-    PROMPT="%{$reset_color%}%n@jerky %{${fg[yellow]}%}%~/
+    PROMPT="%{$reset_color%}%n@%m %{${fg[yellow]}%}%~/
 %{$reset_color%}[%{$fg_bold[cyan]%}INS%{$reset_color%}%{$reset_color%}]$ "
     ;;
   esac
@@ -125,7 +125,6 @@ zle -N zle-keymap-select
 
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey -M viins 'jk' vi-cmd-mode
-bindkey -M viins 'kj' vi-cmd-mode
 bindkey -M viins '^h' vi-backward-char
 bindkey -M viins '^l' vi-forward-char
 bindkey -M viins '^w' vi-forward-word

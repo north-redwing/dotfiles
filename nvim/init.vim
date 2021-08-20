@@ -1,3 +1,10 @@
+"                                _                    
+"                         __   _(_)_ __ ___  _ __ ___ 
+"                         \ \ / / | '_ ` _ \| '__/ __|
+"                          \ V /| | | | | | | | | (__ 
+"                         (_)_/ |_|_| |_| |_|_|  \___|
+"
+"
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible
@@ -148,6 +155,11 @@ nnoremap <leader>i :!ipython3 <CR>
 " buffer切り替え
 nnoremap <silent> bp :bprev<CR>
 nnoremap <silent> bn :bnext<CR>
+
+" ESCでterminal modeを抜ける
+tnoremap <silent><ESC> <C-\><C-n>
+" defaultでinsert modeで入る
+autocmd TermOpen * startinsert
 
 " Tabの代わりに空白を使う
 set expandtab
