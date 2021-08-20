@@ -68,7 +68,7 @@ let g:clever_f_chars_match_any_signs = ';'
 [[plugins]]
 repo = 'terryma/vim-expand-region'
 hook_add = '''
-vmap v <Plug>(expand_region_expand)
+vmap <S-v> <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 '''
 

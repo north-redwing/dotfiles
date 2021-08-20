@@ -153,11 +153,12 @@ nnoremap <leader>c <Nop>
 nnoremap <leader>i :!ipython3 <CR>
 
 " buffer切り替え
-nnoremap <silent> bp :bprev<CR>
-nnoremap <silent> bn :bnext<CR>
+nnoremap <silent> bp :w<CR>:bprev <CR>
+nnoremap <silent> bn :w<CR>:bnext <CR>
 
-" ESCでterminal modeを抜ける
+" terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
+tnoremap <silent>jj <C-\><C-n>
 " defaultでinsert modeで入る
 autocmd TermOpen * startinsert
 

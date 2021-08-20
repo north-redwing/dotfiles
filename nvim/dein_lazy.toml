@@ -16,71 +16,6 @@ autocmd FileType python setlocal completeopt-=preview
 let g:syntastic_python_checkers = ["flake8"] 
 '''
 
-# [[plugins]]
-# repo = 'Shougo/unite.vim'
-# depends = ['neomru.vim', 'neoyank.vim']
-# on_cmd = ['Unite']
-# hook_add = '''
-#  " unite prefix key.
-# nnoremap [unite] <Nop>
-# nmap <Space>u [unite]
-# " unite general settings
-# " insert modeで開始
-# " let g:unite_enable_start_insert = 1
-# " 最近開いたファイル履歴の保存数
-# let g:unite_source_file_mru_limit = 50
-# " file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
-# let g:unite_source_file_mru_ilename_format = ''
-# " yank/pasteを有効にする
-# let g:unite_source_history_yank_enable = 1
-# " 現在開いているファイルのディレクトリ下のファイル一覧。
-# " 開いていない場合はカレントディレクトリ
-# nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-# " バッファ一覧
-# nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-# " レジスタ一覧
-# nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
-# " 最近使用したファイル一覧
-# nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-# " ブックマーク一覧
-# nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
-# " ブックマークに追加
-# nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
-# " registerからpaste
-# nnoremap <silent> [unite]y :<C-u>Unite history/yank<CR> 
-# " uniteを開いている間のキーマッピング
-# autocmd FileType unite call s:unite_my_settings()
-# function! s:unite_my_settings()"{{{
-#     " deleteを有効にする
-#     call unite#custom#alias('file', 'delete', 'vimfiler__delete')
-#     " ESCでuniteを終了
-#     nmap <buffer> <ESC> <Plug>(unite_exit)
-#     " 入力モードのときjjでノーマルモードに移動
-#     imap <buffer> jj <Plug>(unite_insert_leave)
-#     " ctrl+uで上位dirに移動
-#     imap <buffer> <C-u> <Plug>(unite_delete_backward_path)
-#     nmap <buffer> <C-u> <Plug>(unite_delete_backward_path)
-#     " shift+jで縦に分割して開く
-#     nnoremap <silent> <buffer> <expr> <S-j> unite#do_action('below')
-#     inoremap <silent> <buffer> <expr> <S-j> unite#do_action('below')
-#     " shift+kで縦に分割して開く
-#     nnoremap <silent> <buffer> <expr> <S-k> unite#do_action('above')
-#     inoremap <silent> <buffer> <expr> <S-k> unite#do_action('above')
-#     " shift+lで横に分割して開く
-#     nnoremap <silent> <buffer> <expr> <S-l> unite#do_action('right')
-#     inoremap <silent> <buffer> <expr> <S-l> unite#do_action('right')
-#     " shift+hで横に分割して開く
-#     nnoremap <silent> <buffer> <expr> <S-h> unite#do_action('left')
-#     inoremap <silent> <buffer> <expr> <S-h> unite#do_action('left')
-#     " shift+oでその場所に開く
-#     nnoremap <silent> <buffer> <expr> <S-o> unite#do_action('open')
-#     inoremap <silent> <buffer> <expr> <S-o> unite#do_action('open')
-#     " shift+rでrenameする
-#     nnoremap <silent> <buffer> <expr> <S-r> unite#do_action('rename')
-#     inoremap <silent> <buffer> <expr> <S-r> unite#do_action('rename')
-# endfunction"}}}
-# '''
-
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 on_source = ['unite.vim', 'denite.nvim']
@@ -187,22 +122,9 @@ function! s:denite_my_settings()"{{{
     inoremap <silent> <buffer> <expr> <S-h> denite#do_map('do_action', 'vsplit')
 endfunction"}}}
 
-" let s:denite_default_options = {
-"     \ 'prompt': '$ ',
-"     \ 'direction': 'top',
-"     \ }
-" let s:denite_option_array = []
-" for [s:key, s:value] in items(s:denite_default_options)
-"   call add(s:denite_option_array, '-'.s:key.'='.s:value)
-" endfor
-
 " denite general settings
-" insert modeで開始
-" let g:denite_enable_start_insert = 1
 " 最近開いたファイル履歴の保存数
 let g:denite_source_file_mru_limit = 50
-" yank/pasteを有効にする
-let g:denite_source_history_yank_enable = 1
 " 現在開いているファイルのディレクトリ下のファイル一覧。
 " 開いていない場合はカレントディレクトリ
 nnoremap <silent> [denite]f :<C-u>DeniteBufferDir -buffer-name=files file<CR>
@@ -211,7 +133,7 @@ nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
 " registerからpaste
-nnoremap <silent> [denite]y :<C-u>Denite history/yank<CR> 
+nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR> 
 
 " grep
 command! -nargs=? Dgrep call s:Dgrep(<f-args>)
@@ -220,51 +142,55 @@ function s:Dgrep(...)
     execute(':Denite -no-empty -buffer-name=grep-buffer-denite grep -path='.a:1)
   else
     execute(':Denite -no-empty -buffer-name=grep-buffer-denite grep')
-    " execute(':Denite -no-empty -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').' grep')
+  endif
+endfunction
+
+" grep cursor word
+command! -nargs=? DgrepCW call s:DgrepCW(<f-args>)
+function s:DgrepCW(...)
+  if a:0 > 0
+    execute(':DeniteCurorWord -no-empty -buffer-name=grep-buffer-denite grep -path='.a:1)
+  else
+    execute(':DeniteCursorWord -no-empty -buffer-name=grep-buffer-denite grep')
   endif
 endfunction
 
 " show Denite grep results
 command! Dresume execute(':Denite -resume -buffer-name=grep-buffer-denite')
-" command! Dresume execute(':Denite -resume -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').'')
 " next Denite grep result
 command! Dnext execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately')
-" command! Dnext execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately '.join(s:denite_option_array, ' ').'')
 " previous Denite grep result
 command! Dprev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately')
-" command! Dprev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately '.join(s:denite_option_array, ' ').'')
 
 " -buffer-name=
-nnoremap <silent> [denite]g :<C-u>Dgrep
-" <CR>
+nnoremap <silent> [denite]g :<C-u>Dgrep<CR>
+" -buffer-name=
+nnoremap <silent> [denite]c :<C-u>DgrepCW<CR>
 " Denite grep検索結果を再表示する
 nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=grep-buffer-denite<CR>
-" nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=grep-buffer-denite '.join(s:denite_option_array, ' ').'<CR>
 " resumeした検索結果の次の行の結果へ飛ぶ
 nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately<CR>
-" nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately '.join(s:denite_option_array, ' ').'<CR>
 " resumeした検索結果の前の行の結果へ飛ぶ
-nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=grep-buffer-denite  -cursor-pos=-1 -immediately<CR>
-" nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=grep-buffer-denite  -cursor-pos=-1 -immediately '.join(s:denite_option_array, ' ').'<CR>
-
+nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately<CR>
 '''
-
 hook_post_source = '''
 call denite#custom#option('_', {
     \ 'prompt': '$ ',
     \ 'direction': 'top',
     \ })
-" call denite#custom#option('default', s:denite_default_options)
+
+" For ripgrep
+" Note: rg is faster than ag
 call denite#custom#var('file/rec', 'command',
-    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
-    \ [ '.git/', '.ropeproject/', '__pycache__/',
-    \   'venv/', 'images/', '*.min.*', 'img/', 'fonts/'])
-" Ag command on grep source
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+\ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
+
+" Ripgrep command on grep source
+call denite#custom#var('grep', {
+\ 'command': ['rg'],
+\ 'default_opts': ['-i', '--vimgrep', '--no-heading'],
+\ 'recursive_opts': [],
+\ 'pattern_opt': ['--regexp'],
+\ 'separator': ['--'],
+\ 'final_opts': [],
+\ })
 '''
