@@ -75,10 +75,12 @@ set noswapfile
 
 " マウスを使う
 set mouse=a
- "set ttymouse=xterm2
 
-" クリップボードに格納
-" set clipboard=unnamed,autoselect
+if !has('nvim')
+    " クリップボードに格納
+    set clipboard=unnamed,autoselect
+    set ttymouse=xterm2
+endif
 
 " 不可視文字の表示
 set listchars=tab:»-,eol:↲,extends:»,precedes:«,nbsp:%
@@ -153,8 +155,8 @@ nnoremap <leader>c <Nop>
 nnoremap <leader>i :!ipython3 <CR>
 
 " buffer切り替え
-nnoremap <silent> bp :w<CR>:bprev <CR>
-nnoremap <silent> bn :w<CR>:bnext <CR>
+nnoremap <silent> bp :bprev <CR>
+nnoremap <silent> bn :bnext <CR>
 
 " terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
@@ -212,6 +214,22 @@ set incsearch
 set hlsearch
 " Ctrl-C x 2でハイライト終了
 nnoremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
+
+" vimgrepではbuffer内のみのgrep
+" deniteで横断方のgrepは可能
+command! -nargs=+ Grep call Grep(<f-args>)
+function! Grep(...)
+    if a:0 == 1
+        echo 'Use VimGrep => {pattern} ' . a:1 . ' in all buffers'
+        execute(':cex""|:bufdo vimgrepadd ' . a:1 . ' %')
+    elseif a:0 == 2
+        echo 'Use VimGrep => {pattern} ' . a:1 . ' {file} ' . a:2
+        execute(':vimgrep ' . a:1 . ' ' . a:2)
+    endif
+endfunction
+
+nnoremap <silent> cp :cprev <CR>
+nnoremap <silent> cn :cnext <CR>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$

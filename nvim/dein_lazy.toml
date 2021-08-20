@@ -136,8 +136,8 @@ nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
 nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR> 
 
 " grep
-command! -nargs=? Dgrep call s:Dgrep(<f-args>)
-function s:Dgrep(...)
+command! -nargs=? DGrep call s:DGrep(<f-args>)
+function s:DGrep(...)
   if a:0 > 0
     execute(':Denite -no-empty -buffer-name=grep-buffer-denite grep -path='.a:1)
   else
@@ -146,8 +146,8 @@ function s:Dgrep(...)
 endfunction
 
 " grep cursor word
-command! -nargs=? DgrepCW call s:DgrepCW(<f-args>)
-function s:DgrepCW(...)
+command! -nargs=? DGrepCW call s:DGrepCW(<f-args>)
+function s:DGrepCW(...)
   if a:0 > 0
     execute(':DeniteCurorWord -no-empty -buffer-name=grep-buffer-denite grep -path='.a:1)
   else
@@ -156,16 +156,16 @@ function s:DgrepCW(...)
 endfunction
 
 " show Denite grep results
-command! Dresume execute(':Denite -resume -buffer-name=grep-buffer-denite')
+command! DResume execute(':Denite -resume -buffer-name=grep-buffer-denite')
 " next Denite grep result
-command! Dnext execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately')
+command! DNext execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=+1 -immediately')
 " previous Denite grep result
-command! Dprev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately')
+command! DPrev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately')
 
 " -buffer-name=
-nnoremap <silent> [denite]g :<C-u>Dgrep<CR>
+nnoremap <silent> [denite]g :<C-u>DGrep<CR>
 " -buffer-name=
-nnoremap <silent> [denite]c :<C-u>DgrepCW<CR>
+nnoremap <silent> [denite]c :<C-u>DGrepCW<CR>
 " Denite grep検索結果を再表示する
 nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=grep-buffer-denite<CR>
 " resumeした検索結果の次の行の結果へ飛ぶ
