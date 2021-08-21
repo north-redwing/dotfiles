@@ -67,7 +67,7 @@ nmap <silent> <S-j> <Plug>(ale_next_wrap)
 repo = 'zchee/deoplete-jedi'
 on_ft = ['python']
 hook_add = '''
-" let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
+let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
 let g:deoplete#sources#jedi#extra_path = ['/usr/bin/python3']
 let g:deoplete#sources#jedi#server_timeout=100
 let g:deoplete#sources#jedi#statement_length=100
@@ -81,19 +81,19 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 hook_add = '''
-"Shift+jにターゲットジャンプ割当
+" Shift+jにターゲットジャンプ割当
 imap <S-j> <Plug>(neosnippet_expand_or_jump)
 smap <S-j> <Plug>(neosnippet_expand_or_jump)
 xmap <S-j> <Plug>(neosnippet_expand_target)
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 '''
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim', 'neoyank.vim']
-on_cmd = ['Denite']
+on_cmd = ['Denite', 'DeniteBufferDir', 'DeniteCursorWord']
 hook_add = '''
 " denite prefix key.
 nnoremap [denite] <Nop>
@@ -109,6 +109,8 @@ function! s:denite_my_settings()"{{{
     nnoremap <silent><buffer><expr> p
     \ denite#do_map('do_action', 'preview')
     nnoremap <silent><buffer><expr> q
+    \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> <leader>q
     \ denite#do_map('quit')
     nnoremap <silent><buffer><expr> i
     \ denite#do_map('open_filter_buffer')
@@ -146,12 +148,12 @@ function s:DGrep(...)
 endfunction
 
 " grep cursor word
-command! -nargs=? DGrepCW call s:DGrepCW(<f-args>)
-function s:DGrepCW(...)
+command! -nargs=? DGrepCursorWord call s:DGrepCurdorWord(<f-args>)
+function s:DGrepCurdorWord(...)
   if a:0 > 0
-    execute(':DeniteCurorWord -no-empty -buffer-name=grep-buffer-denite grep -path='.a:1)
+    execute(':DeniteCurorWord -no-empty -buffer-name=grep-buffer-denite -post-action=jump grep -path='.a:1)
   else
-    execute(':DeniteCursorWord -no-empty -buffer-name=grep-buffer-denite grep')
+    execute(':DeniteCursorWord -no-empty -buffer-name=grep-buffer-denite -post-action=jump grep')
   endif
 endfunction
 
@@ -165,7 +167,7 @@ command! DPrev execute(':Denite -resume -buffer-name=grep-buffer-denite -cursor-
 " -buffer-name=
 nnoremap <silent> [denite]g :<C-u>DGrep<CR>
 " -buffer-name=
-nnoremap <silent> [denite]c :<C-u>DGrepCW<CR>
+nnoremap <silent> [denite]c :<C-u>DGrepCursorWord<CR>
 " Denite grep検索結果を再表示する
 nnoremap <silent> [denite]r :<C-u>Denite -resume -buffer-name=grep-buffer-denite<CR>
 " resumeした検索結果の次の行の結果へ飛ぶ
@@ -177,10 +179,12 @@ hook_post_source = '''
 call denite#custom#option('_', {
     \ 'prompt': '$ ',
     \ 'direction': 'top',
+    \ 'vertical_preview': v:true,
+    \ 'preview_width': &columns / 2,
+    \ 'winheight': &lines / 5,
     \ })
 
-" For ripgrep
-if executable('rg')
+if executable('rg') " For ripgrep
     " Note: rg is faster than ag
     call denite#custom#var('file/rec', 'command',
     \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
@@ -193,8 +197,7 @@ if executable('rg')
     \ 'separator': ['--'],
     \ 'final_opts': [],
     \ })
-" For ag
-elseif executable('ag')
+elseif executable('ag') "For ag
     " Change file/rec command.
     call denite#custom#var('file/rec', 'command',
     \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])

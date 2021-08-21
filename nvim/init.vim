@@ -146,17 +146,17 @@ set autowrite
 set hidden
 
 " bufferの全てを変更があれば保存
-nnoremap <leader>x :xa <CR>
-nnoremap <leader>w :wa <CR>
-nnoremap <leader>q :qa! <CR>
+nnoremap <leader>z :xa <CR>
+nnoremap ZZ :xa <CR>
+" 打ち間違い時の誤編集の防止
 nnoremap <leader>c <Nop>
 
 " ipython実行
 nnoremap <leader>i :!ipython3 <CR>
 
 " buffer切り替え
-nnoremap <silent> bp :bprev <CR>
-nnoremap <silent> bn :bnext <CR>
+nnoremap <leader>bp :bprev <CR>
+nnoremap <leader>bn :bnext <CR>
 
 " terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
@@ -187,7 +187,7 @@ if has('syntax')
         autocmd ColorScheme * call ZenkakuSpace()
         autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
     augroup END
-     call ZenkakuSpace()
+    call ZenkakuSpace()
 endif
 
 " 削除をレジスタに入れない
@@ -227,11 +227,13 @@ function! Grep(...)
     if a:0 == 1
         echo 'Use Grep => {file} ' . g:file . ' {pattern} ' . a:1
         execute(':vimgrep ' . a:1 . ' ##')
+        execute(':topleft cw | set modifiable')
     elseif a:0 == 2
         echo 'Use Grep => {file} ' . a:1 . ' {pattern} ' . a:2
         let g:file = a:1
         execute(':ar ' . a:1)
         execute(':vimgrep ' . a:2 . ' ' . a:1)
+        execute(':topleft cw | set modifiable')
     elseif a:0 != 1 and a:0 != 2
         echo 'Invalid Argument!'
         echo ':Grep {file} {pattern}'
@@ -243,19 +245,26 @@ command! -nargs=+ Grep call Grep(<f-args>)
 
 " deniteで横断grepは可能なため
 " vimgrepでは開いているbuffer内のみのgrepをdefaultにする
-function! GrepAllBuffer(...)
+function! GrepBuffer(...)
     if a:0 == 1
         echo 'Use Grep => {pattern} ' . a:1 . ' in all buffers'
         execute(':cex""|:bufdo vimgrepadd ' . a:1 . ' %')
+        execute(':topleft cw | set modifiable')
     elseif a:0 != 1
         echo 'Invalid Argument!'
-        echo ':GrepAllBuffer {pattern}'
+        echo ':GrepBuffer {pattern}'
     endif
 endfunction
-command! -nargs=1 GrepAllBuffer call GrepAllBuffer(<f-args>)
+command! -nargs=1 GrepBuffer call GrepBuffer(<f-args>)
 
+nnoremap <leader>g :GrepBuffer
+nnoremap <leader>gc :GrepBuffer <C-r><C-w><CR>
+nnoremap <leader>q :cclose <CR>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
+
+" windowの移動
+nnoremap <leader>w <C-w><C-w>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$
