@@ -180,17 +180,32 @@ call denite#custom#option('_', {
     \ })
 
 " For ripgrep
-" Note: rg is faster than ag
-call denite#custom#var('file/rec', 'command',
-\ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
-
-" Ripgrep command on grep source
-call denite#custom#var('grep', {
-\ 'command': ['rg'],
-\ 'default_opts': ['-i', '--vimgrep', '--no-heading'],
-\ 'recursive_opts': [],
-\ 'pattern_opt': ['--regexp'],
-\ 'separator': ['--'],
-\ 'final_opts': [],
-\ })
+if executable('rg')
+    " Note: rg is faster than ag
+    call denite#custom#var('file/rec', 'command',
+    \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
+    " Ripgrep command on grep source
+    call denite#custom#var('grep', {
+    \ 'command': ['rg'],
+    \ 'default_opts': ['-i', '--vimgrep', '--no-heading'],
+    \ 'recursive_opts': [],
+    \ 'pattern_opt': ['--regexp'],
+    \ 'separator': ['--'],
+    \ 'final_opts': [],
+    \ })
+" For ag
+elseif executable('ag')
+    " Change file/rec command.
+    call denite#custom#var('file/rec', 'command',
+    \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+    " Ag command on grep source
+    call denite#custom#var('grep', {
+        \ 'command': ['ag'],
+        \ 'default_opts': ['-i', '--vimgrep'],
+        \ 'recursive_opts': [],
+        \ 'pattern_opt': [],
+        \ 'separator': ['--'],
+        \ 'final_opts': [],
+        \ })
+endif
 '''

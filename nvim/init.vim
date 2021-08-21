@@ -215,21 +215,47 @@ set hlsearch
 " Ctrl-C x 2でハイライト終了
 nnoremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 
-" vimgrepではbuffer内のみのgrep
-" deniteで横断方のgrepは可能
-command! -nargs=+ Grep call Grep(<f-args>)
+" defaultのgrepをripgrepに変更
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
+" filetypeをwildcardで検索する
+" deniteでもできれば必要ないが方法が不明
 function! Grep(...)
     if a:0 == 1
-        echo 'Use VimGrep => {pattern} ' . a:1 . ' in all buffers'
-        execute(':cex""|:bufdo vimgrepadd ' . a:1 . ' %')
+        echo 'Use Grep => {file} ' . g:file . ' {pattern} ' . a:1
+        execute(':vimgrep ' . a:1 . ' ##')
     elseif a:0 == 2
-        echo 'Use VimGrep => {pattern} ' . a:1 . ' {file} ' . a:2
-        execute(':vimgrep ' . a:1 . ' ' . a:2)
+        echo 'Use Grep => {file} ' . a:1 . ' {pattern} ' . a:2
+        let g:file = a:1
+        execute(':ar ' . a:1)
+        execute(':vimgrep ' . a:2 . ' ' . a:1)
+    elseif a:0 != 1 and a:0 != 2
+        echo 'Invalid Argument!'
+        echo ':Grep {file} {pattern}'
+        echo 'or if you use the last {file} again,'
+        echo ':Grep {pattern}'
     endif
 endfunction
+command! -nargs=+ Grep call Grep(<f-args>)
 
-nnoremap <silent> cp :cprev <CR>
-nnoremap <silent> cn :cnext <CR>
+" deniteで横断grepは可能なため
+" vimgrepでは開いているbuffer内のみのgrepをdefaultにする
+function! GrepAllBuffer(...)
+    if a:0 == 1
+        echo 'Use Grep => {pattern} ' . a:1 . ' in all buffers'
+        execute(':cex""|:bufdo vimgrepadd ' . a:1 . ' %')
+    elseif a:0 != 1
+        echo 'Invalid Argument!'
+        echo ':GrepAllBuffer {pattern}'
+    endif
+endfunction
+command! -nargs=1 GrepAllBuffer call GrepAllBuffer(<f-args>)
+
+nnoremap <leader>cp :cprev <CR>
+nnoremap <leader>cn :cnext <CR>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$
