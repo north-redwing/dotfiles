@@ -5,7 +5,7 @@
 "                         (_)_/ |_|_| |_| |_|_|  \___|
 "
 "
-"dein Scripts-----------------------------
+" dein Scripts-----------------------------
 if &compatible
   set nocompatible
 endif
@@ -44,7 +44,7 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-"End dein Scripts-------------------------
+" End dein Scripts-------------------------
 
 "ビープ音すべてを無効にする
 set visualbell t_vb=
@@ -127,6 +127,13 @@ inoremap <C-l> <Right>
 inoremap <C-w> <C-\><C-O>w
 inoremap <C-b> <C-\><C-O>b
 
+" command modeでもCtrl同時押しで移動
+cnoremap <C-k> <Up>
+cnoremap <C-j> <Down>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+cnoremap <C-x> <Del>
+
 " 貼り付けたテキストの末尾へ自動的に移動
 vnoremap <silent> y y`]
 
@@ -151,18 +158,23 @@ nnoremap ZZ :xa <CR>
 " 打ち間違い時の誤編集の防止
 nnoremap <leader>c <Nop>
 
-" ipython実行
-nnoremap <leader>i :!ipython3 <CR>
-
-" buffer切り替え
-nnoremap <leader>bp :bprev <CR>
-nnoremap <leader>bn :bnext <CR>
+" window
+nnoremap <leader>ww <C-w><C-w>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
 
 " terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
 tnoremap <silent>jj <C-\><C-n>
 " defaultでinsert modeで入る
 autocmd TermOpen * startinsert
+
+" ipython実行
+nnoremap <leader>i :!ipython3 <CR>
+
+" buffer切り替え
+nnoremap <leader>bp :bprev <CR>
+nnoremap <leader>bn :bnext <CR>
 
 " Tabの代わりに空白を使う
 set expandtab
@@ -191,8 +203,9 @@ if has('syntax')
 endif
 
 " 削除をレジスタに入れない
-noremap x "_x
+nnoremap x "_x
 nnoremap <S-x> "_X
+nnoremap s "_s
 
 " returnでnormal modeのまま空白行挿入
 nnoremap <CR> A<CR><ESC>
@@ -217,7 +230,7 @@ nnoremap <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 
 " defaultのgrepをripgrepに変更
 if executable('rg')
-    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepprg=rg\ --vimgrep\ --no-heading\ --exclude-dir=.git\ --exclude-dir=__pycache__
     set grepformat=%f:%l:%c:%m,%f:%l:%m
 endif
 
@@ -226,14 +239,11 @@ endif
 function! Grep(...)
     if a:0 == 1
         echo 'Use Grep => {file} ' . g:file . ' {pattern} ' . a:1
-        execute(':vimgrep ' . a:1 . ' ##')
-        execute(':topleft cw | set modifiable')
+        execute(':cex "" | vimgrep ' . a:1 . ' ' . g:file . ' | bd | topleft cw | set modifiable')
     elseif a:0 == 2
         echo 'Use Grep => {file} ' . a:1 . ' {pattern} ' . a:2
         let g:file = a:1
-        execute(':ar ' . a:1)
-        execute(':vimgrep ' . a:2 . ' ' . a:1)
-        execute(':topleft cw | set modifiable')
+        execute(':cex "" | vimgrep ' . a:2 . ' ' . a:1 . ' | bd | topleft cw | set modifiable')
     elseif a:0 != 1 and a:0 != 2
         echo 'Invalid Argument!'
         echo ':Grep {file} {pattern}'
@@ -259,12 +269,11 @@ command! -nargs=1 GrepBuffer call GrepBuffer(<f-args>)
 
 nnoremap <leader>g :GrepBuffer
 nnoremap <leader>gc :GrepBuffer <C-r><C-w><CR>
-nnoremap <leader>q :cclose <CR>
+nnoremap <leader>cc :cclose <CR>
+" 打ち間違いによる誤編集防止
+nnoremap <leader>xx <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
-
-" windowの移動
-nnoremap <leader>w <C-w><C-w>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$

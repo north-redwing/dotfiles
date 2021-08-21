@@ -89,3 +89,6 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'kqito/vim-easy-replace'

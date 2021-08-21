@@ -34,6 +34,8 @@ if !has('nvim')
 endif
 let g:deoplete#enable_at_startup = 1
 let g:python3_host_prog = '/usr/bin/python3'
+" defaultの20ms遅延より早く補完されるようにする
+let g:auto_complete_delay = 5
 '''
 
 [[plugins]]
@@ -110,7 +112,7 @@ function! s:denite_my_settings()"{{{
     \ denite#do_map('do_action', 'preview')
     nnoremap <silent><buffer><expr> q
     \ denite#do_map('quit')
-    nnoremap <silent><buffer><expr> <leader>q
+    nnoremap <silent><buffer><expr> <leader>cc
     \ denite#do_map('quit')
     nnoremap <silent><buffer><expr> i
     \ denite#do_map('open_filter_buffer')
