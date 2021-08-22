@@ -87,13 +87,48 @@ nnoremap <silent> [denite]n :<C-u>Denite -resume -buffer-name=grep-buffer-denite
 nnoremap <silent> [denite]p :<C-u>Denite -resume -buffer-name=grep-buffer-denite -cursor-pos=-1 -immediately<CR>
 '''
 hook_post_source = '''
+" float windowを使わない設定
+" call denite#custom#option('_', {
+"     \ 'prompt': '$ ',
+"     \ 'direction': 'top',
+"     \ 'vertical_preview': v:true,
+"     \ 'preview_width': &columns / 2,
+"     \ 'winheight': &lines / 5,
+"     \ })
+
+" float windowを使う設定
 call denite#custom#option('_', {
+    \ 'cached_filter': v:true,
+    \ 'cursor_shape': v:true,
+    \ 'cursor_wrap': v:true,
+    \ 'floating_preview': v:true,
+    \ 'highlight_filter_background': 'DeniteFilter',
+    \ 'highlight_matched_char': 'Directory',
+    \ 'highlight_matched_range': 'PreProc',
+    \ 'match_highlight': v:true,
+    \ 'max_dynamic_update_candidates': 100000,
     \ 'prompt': '$ ',
-    \ 'direction': 'top',
+    \ 'split': has('nvim') ? 'floating_relative_cursor' : 'horizontal',
     \ 'vertical_preview': v:true,
-    \ 'preview_width': &columns / 2,
-    \ 'winheight': &lines / 5,
     \ })
+function! s:denite_detect_size() abort
+  let s:denite_winheight = 20
+  let s:denite_winrow = &lines > s:denite_winheight ? (&lines - s:denite_winheight) / 2 : 0
+  let s:denite_winwidth = &columns > 240 ? &columns / 2 : 120
+  let s:denite_wincol = &columns > s:denite_winwidth ? (&columns - s:denite_winwidth) / 2 : 0
+  call denite#custom#option('_', {
+        \ 'wincol': s:denite_wincol,
+        \ 'winheight': s:denite_winheight,
+        \ 'winrow': s:denite_winrow,
+        \ 'winwidth': s:denite_winwidth,
+        \ })
+endfunction
+augroup denite-detect-size
+  autocmd!
+  autocmd VimResized * call <SID>denite_detect_size()
+augroup END
+call s:denite_detect_size()
+
 " For ripgrep
 if executable('rg')
     " Note: rg is faster than ag
@@ -216,6 +251,7 @@ on_ft = ['python']
 
 [[plugins]]
 repo = 'kana/vim-textobj-user'
+on_ft = ['python']
 sources = ['bps/vim-textobj-python']
 
 #-------------------- 

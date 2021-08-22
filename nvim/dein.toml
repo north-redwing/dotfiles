@@ -43,12 +43,12 @@ map R <Plug>(operator-replace)
 repo = 'rhysd/vim-operator-surround'
 hook_add = '''
 " operator mappings
-" append srround a <text object>
-map <silent>as <Plug>(operator-surround-append)a
-" delete srround a <text object>
-map <silent>ds <Plug>(operator-surround-delete)a
-" replace srround a <text object>
-map <silent>rs <Plug>(operator-surround-replace)a
+" append surround <text object>
+map <silent>as <Plug>(operator-surround-append)
+" delete surround a <text object>
+map <silent>ds <Plug>(operator-surround-delete)
+" replace surround a <text object>
+map <silent>rs <Plug>(operator-surround-replace)
 '''
 
 [[plugins]]
@@ -114,3 +114,9 @@ repo = 'Yggdroot/indentLine'
 hook_add = '''
 let g:indentLine_char = '|'
 '''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tomasr/molokai'

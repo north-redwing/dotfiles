@@ -46,6 +46,19 @@ if dein#check_install()
 endif
 " End dein Scripts-------------------------
 
+colorscheme molokai
+" 背景色¬
+set background=dark
+" 背景透過
+" augroup TransparentBG
+"     autocmd!
+"     autocmd Colorscheme * highlight Normal ctermbg=none
+"     autocmd Colorscheme * highlight NonText ctermbg=none
+"     autocmd Colorscheme * highlight LineNr ctermbg=none
+"     autocmd Colorscheme * highlight Folded ctermbg=none
+"     autocmd Colorscheme * highlight EndOfBuffer ctermbg=none 
+" augroup END
+
 "ビープ音すべてを無効にする
 set visualbell t_vb=
 set noerrorbells
@@ -104,7 +117,7 @@ set showmode
 " 相対行番号を表示
 set relativenumber
 " 行番号の色を変更
-highlight LineNr ctermfg=239
+" highlight LineNr ctermfg=239
 " 現在の行をハイライト
 set cursorline
 " カラムラインを引く
@@ -149,7 +162,7 @@ inoremap <silent> っj <ESC>
 inoremap <silent> jk <ESC>
 
 " typo修正
-inoremap <C-t> <Esc><Left>"zx"zpa
+inoremap <silent><C-t> <Esc><Left>"zx"zpa
 
 " buffer切り替え時に自動で書き込み
 set autowrite
@@ -158,11 +171,9 @@ set hidden
 " bufferの全てを変更があれば保存
 nnoremap <leader>z :xa <CR>
 nnoremap ZZ :xa <CR>
-" 打ち間違い時の誤編集の防止
-nnoremap <leader>c <Nop>
 
 " window
-nnoremap <leader>ww <C-w><C-w>
+nnoremap <silent><leader>ww <C-w><C-w>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 
@@ -176,8 +187,8 @@ autocmd TermOpen * startinsert
 nnoremap <leader>i :!ipython3 <CR>
 
 " buffer切り替え
-nnoremap <leader>bp :bprev <CR>
-nnoremap <leader>bn :bnext <CR>
+nnoremap <silent><leader>bp :bprev <CR>
+nnoremap <silent><leader>bn :bnext <CR>
 
 " Tabの代わりに空白を使う
 set expandtab
@@ -270,12 +281,12 @@ function! GrepBuffer(...)
 endfunction
 command! -nargs=1 GrepBuffer call GrepBuffer(<f-args>)
 
-nnoremap <leader>g :GrepBuffer
-nnoremap <leader>gc :GrepBuffer <C-r><C-w><CR>
+nnoremap <leader>g :GrepBuffer 
+nnoremap <leader>c :GrepBuffer <C-r><C-w><CR>
+nnoremap <leader>gg :Grep 
 nnoremap <leader>cc :cclose <CR>
 nnoremap <leader>cw :topleft cw<CR>:set modifiable<CR>
-" 打ち間違いによる誤編集防止
-"
+
 nnoremap <leader>xx <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
