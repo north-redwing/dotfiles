@@ -275,6 +275,9 @@ nnoremap <leader>xx <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
 
+" pythonでの関数移動をsearch使用で行う
+autocmd FileType python nnoremap <leader>n /def<CR>
+
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$
 nnoremap <S-y> y$

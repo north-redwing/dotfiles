@@ -1,97 +1,6 @@
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = ['python']
-on_i = 1
-hook_add = '''
- " 補完のコマンドmapping
-let g:jedi#completions_command = "<leader>p"
-let g:jedi#use_tabs_not_buffers = 1
-" 補完の時に一番上の選択肢が自動的に選ばれないようにする
-let g:jedi#popup_select_first = 0
-" jediでは非同期で遅いため.で補完を始めない
-let g:jedi#popup_on_dot = 0
-let g:jedi#documentation_command = "<leader>k"
-" previewを非表示
-autocmd FileType python setlocal completeopt-=preview
-let g:syntastic_python_checkers = ["flake8"] 
-'''
-
-[[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['unite.vim', 'denite.nvim']
-
-[[plugins]]
-repo = 'Shougo/neoyank.vim'
-on_source = ['unite.vim', 'denite.nvim']
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-hook_add = '''
-if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-endif
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/usr/bin/python3'
-" defaultの20ms遅延より早く補完されるようにする
-let g:auto_complete_delay = 5
-'''
-
-[[plugins]]
-repo ='cespare/vim-toml'
-on_ft =['toml']
-
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-on_cmd = ['help']
-
-[[plugins]]
-repo = 'voithos/vim-python-matchit'
-on_ft = ['python']
-
-[[plugins]]
-repo = 'w0rp/ale'
-on_ft = ['python']
-hook_add = '''
-" 表示に関する設定
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-" Shift + kで次の指摘へ、Shift + jで前の指摘へ移動
-nmap <silent> <S-k> <Plug>(ale_previous_wrap)
-nmap <silent> <S-j> <Plug>(ale_next_wrap)
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = ['python']
-hook_add = '''
-let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
-let g:deoplete#sources#jedi#extra_path = ['/usr/bin/python3']
-let g:deoplete#sources#jedi#server_timeout=100
-let g:deoplete#sources#jedi#statement_length=100
-" jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
-let g:jedi#completions_enabled = 0
-'''
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-hook_add = '''
-" Shift+jにターゲットジャンプ割当
-imap <S-j> <Plug>(neosnippet_expand_or_jump)
-smap <S-j> <Plug>(neosnippet_expand_or_jump)
-xmap <S-j> <Plug>(neosnippet_expand_target)
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-'''
-
+#-------------------- 
+# SHOUGO-SAN'S
+#-------------------- 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim', 'neoyank.vim']
@@ -214,3 +123,122 @@ elseif executable('ag') "For ag
         \ })
 endif
 '''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = '/usr/bin/python3'
+" defaultの20ms遅延より早く補完されるようにする
+let g:auto_complete_delay = 5
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_i  = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+hook_add = '''
+" Shift+jにターゲットジャンプ割当
+imap <S-j> <Plug>(neosnippet_expand_or_jump)
+smap <S-j> <Plug>(neosnippet_expand_or_jump)
+xmap <S-j> <Plug>(neosnippet_expand_target)
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
+
+#-------------------- 
+# PYTHON
+#-------------------- 
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
+on_i = 1
+hook_add = '''
+let g:jedi#use_tabs_not_buffers = 1
+" 補完の時に一番上の選択肢が自動的に選ばれないようにする
+let g:jedi#popup_select_first = 0
+" jediは非同期で遅いため.で補完を始めない
+let g:jedi#popup_on_dot = 0
+" previewを非表示
+autocmd FileType python setlocal completeopt-=preview
+let g:syntastic_python_checkers = ["flake8"] 
+
+" NOTE: subject to change!
+let g:jedi#goto_command = "<leader>d"
+let g:jedi#goto_assignments_command = "<leader>a"
+let g:jedi#goto_stubs_command = "<leader>s"
+" let g:jedi#goto_definitions_command = "<leader>d"
+let g:jedi#documentation_command = "<leader>k"
+let g:jedi#usages_command = "<leader>u"
+let g:jedi#completions_command = "<leader>p"
+let g:jedi#rename_command = "<leader>r"
+'''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = ['python']
+hook_add = '''
+let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
+let g:deoplete#sources#jedi#extra_path = ['/usr/bin/python3']
+let g:deoplete#sources#jedi#server_timeout=100
+let g:deoplete#sources#jedi#statement_length=100
+" jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
+let g:jedi#completions_enabled = 0
+'''
+
+[[plugins]]
+repo = 'voithos/vim-python-matchit'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'bps/vim-textobj-python'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = ['python']
+
+#-------------------- 
+# OTHERS
+#-------------------- 
+[[plugins]]
+repo ='cespare/vim-toml'
+on_ft =['toml']
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_cmd = ['help']
+
+[[plugins]]
+repo = 'w0rp/ale'
+on_ft = ['python']
+hook_add = '''
+" 表示に関する設定
+let g:airline#extensions#ale#open_lnum_symbol = '('
+let g:airline#extensions#ale#close_lnum_symbol = ')'
+let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+highlight link ALEErrorSign Tag
+highlight link ALEWarningSign StorageClass
+" Shift + kで次の指摘へ、Shift + jで前の指摘へ移動
+nmap <silent> <S-k> <Plug>(ale_previous_wrap)
+nmap <silent> <S-j> <Plug>(ale_next_wrap)
+'''
+
+[[plugins]]
+repo = 'kana/vim-smartinput'
+on_i = 1

@@ -1,11 +1,15 @@
+#-------------------- 
+# SHOUGO-SAN'S
+#-------------------- 
 [[plugins]]
-
 repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim'
-repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'tpope/vim-repeat'
+repo = 'Shougo/neosnippet-snippets'
 
+#-------------------- 
+# AIRLINE
+#-------------------- 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = ['vim-airline-themes']
@@ -21,6 +25,9 @@ let g:airline_theme = 'papercolor'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+#-------------------- 
+# OPERATOR
+#-------------------- 
 [[plugins]]
 repo = 'kana/vim-operator-user'
 depends = ['vim-operator-replace']
@@ -30,6 +37,18 @@ repo = 'kana/vim-operator-replace'
 hook_add = '''
 " yankした文字列と対象の置換
 map R <Plug>(operator-replace)
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+hook_add = '''
+" operator mappings
+" append srround <text object>
+map <silent>as <Plug>(operator-surround-append)
+" delete srround <text object>
+map <silent>ds <Plug>(operator-surround-delete)
+" replace srround <text object>
+map <silent>rs <Plug>(operator-surround-replace)
 '''
 
 [[plugins]]
@@ -45,26 +64,14 @@ nmap <C-p> <Plug>(yankround-prev)
 nmap <C-n> <Plug>(yankround-next)
 '''
 
+#-------------------- 
+# YANK/PASTE/SERACH/HIGHLIGHT
+#-------------------- 
 [[plugins]]
-repo = 'yuttie/comfortable-motion.vim'
-
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-hook_add = '''
-let g:indentLine_char = '|'
-'''
+repo = 'machakann/vim-highlightedyank'
 
 [[plugins]]
 repo = 'thinca/vim-visualstar'
-
-[[plugins]]
-repo = 'rhysd/clever-f.vim'
-hook_add ='''
-" 大文字小文字を無視
-let g:clever_f_ignore_case = 1
-" 任意の記号にマッチする文字を設定
-let g:clever_f_chars_match_any_signs = ';'
-'''
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
@@ -74,7 +81,13 @@ vmap <C-v> <Plug>(expand_region_shrink)
 '''
 
 [[plugins]]
-repo = 'machakann/vim-highlightedyank'
+repo = 'kqito/vim-easy-replace'
+
+#-------------------- 
+# MOVEMENT
+#-------------------- 
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
 
 [[plugins]]
 repo = 'rhysd/accelerated-jk'
@@ -85,10 +98,22 @@ let g:accelerated_jk_acceleration_limit = 1
 '''
 
 [[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+repo = 'rhysd/clever-f.vim'
+hook_add ='''
+" 大文字小文字を無視
+let g:clever_f_ignore_case = 1
+" 任意の記号にマッチする文字を設定
+let g:clever_f_chars_match_any_signs = ';'
+'''
+
+#-------------------- 
+# OTHERS
+#-------------------- 
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+let g:indentLine_char = '|'
+'''
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-
-[[plugins]]
-repo = 'kqito/vim-easy-replace'
+repo = 'kana/vim-textobj-user'
