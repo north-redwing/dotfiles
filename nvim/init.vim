@@ -140,13 +140,16 @@ vnoremap <silent> y y`]
 " 行頭行末に移動
 nnoremap <S-h> ^
 nnoremap <S-l> $
-vnoremap <S-h> ^
+vnorema  <S-h> ^
 vnoremap <S-l> $
 
 " insert modeから抜ける
 inoremap <silent> jj <Esc>
 inoremap <silent> っj <ESC>
 inoremap <silent> jk <ESC>
+
+" typo修正
+inoremap <C-t> <Esc><Left>"zx"zpa
 
 " buffer切り替え時に自動で書き込み
 set autowrite
@@ -237,14 +240,14 @@ endif
 " filetypeをwildcardで検索する
 " deniteでもできれば必要ないが方法が不明
 function! Grep(...)
-    if a:0 == 1
+    if and(a:0 == 1, exists('g:file'))
         echo 'Use Grep => {file} ' . g:file . ' {pattern} ' . a:1
         execute(':cex "" | vimgrep ' . a:1 . ' ' . g:file . ' | bd | topleft cw | set modifiable')
     elseif a:0 == 2
         echo 'Use Grep => {file} ' . a:1 . ' {pattern} ' . a:2
         let g:file = a:1
         execute(':cex "" | vimgrep ' . a:2 . ' ' . a:1 . ' | bd | topleft cw | set modifiable')
-    elseif a:0 != 1 and a:0 != 2
+    else
         echo 'Invalid Argument!'
         echo ':Grep {file} {pattern}'
         echo 'or if you use the last {file} again,'
@@ -258,9 +261,9 @@ command! -nargs=+ Grep call Grep(<f-args>)
 function! GrepBuffer(...)
     if a:0 == 1
         echo 'Use Grep => {pattern} ' . a:1 . ' in all buffers'
-        execute(':cex""|:bufdo vimgrepadd ' . a:1 . ' %')
+        execute(':cex""|bufdo vimgrepadd ' . a:1 . ' %')
         execute(':topleft cw | set modifiable')
-    elseif a:0 != 1
+    else
         echo 'Invalid Argument!'
         echo ':GrepBuffer {pattern}'
     endif
@@ -270,7 +273,9 @@ command! -nargs=1 GrepBuffer call GrepBuffer(<f-args>)
 nnoremap <leader>g :GrepBuffer
 nnoremap <leader>gc :GrepBuffer <C-r><C-w><CR>
 nnoremap <leader>cc :cclose <CR>
+nnoremap <leader>cw :topleft cw<CR>:set modifiable<CR>
 " 打ち間違いによる誤編集防止
+"
 nnoremap <leader>xx <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>

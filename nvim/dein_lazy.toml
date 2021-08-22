@@ -94,8 +94,8 @@ call denite#custom#option('_', {
     \ 'preview_width': &columns / 2,
     \ 'winheight': &lines / 5,
     \ })
-
-if executable('rg') " For ripgrep
+" For ripgrep
+if executable('rg')
     " Note: rg is faster than ag
     call denite#custom#var('file/rec', 'command',
     \ ['rg', '--files', '--glob', '!.git', '--color', 'never'])
@@ -108,7 +108,8 @@ if executable('rg') " For ripgrep
     \ 'separator': ['--'],
     \ 'final_opts': [],
     \ })
-elseif executable('ag') "For ag
+" For ag
+elseif executable('ag')
     " Change file/rec command.
     call denite#custom#var('file/rec', 'command',
     \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
