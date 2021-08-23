@@ -115,7 +115,4 @@ let g:indentLine_char = '|'
 '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'tomasr/molokai'

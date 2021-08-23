@@ -179,6 +179,10 @@ nnoremap <leader>q :q<CR>
 " terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
 tnoremap <silent>jj <C-\><C-n>
+" どのmodeでも<leader>wwで強制的にwindowを移動する
+tmap <silent><leader>ww <C-\><C-n><C-w><C-w>
+" どのmodeでも<leader>qで強制的にwindowを消す
+tmap <silent><leader>q <C-\><C-n>q
 " defaultでinsert modeで入る
 autocmd TermOpen * startinsert
 
