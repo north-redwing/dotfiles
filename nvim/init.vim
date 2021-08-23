@@ -116,8 +116,6 @@ set showmode
 " set number
 " 相対行番号を表示
 set relativenumber
-" 行番号の色を変更
-" highlight LineNr ctermfg=239
 " 現在の行をハイライト
 set cursorline
 " カラムラインを引く
@@ -138,6 +136,7 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 inoremap <C-w> <C-\><C-O>w
+inoremap <C-e> <C-\><C-O>e
 inoremap <C-b> <C-\><C-O>b
 
 " command modeでもCtrl同時押しで移動
@@ -183,12 +182,10 @@ tnoremap <silent>jj <C-\><C-n>
 " defaultでinsert modeで入る
 autocmd TermOpen * startinsert
 
-" ipython実行
-nnoremap <leader>i :!ipython3 <CR>
-
 " buffer切り替え
 nnoremap <silent><leader>bp :bprev <CR>
 nnoremap <silent><leader>bn :bnext <CR>
+nnoremap <silent><leader><leader> :bnext <CR>
 
 " Tabの代わりに空白を使う
 set expandtab
@@ -282,17 +279,17 @@ endfunction
 command! -nargs=1 GrepBuffer call GrepBuffer(<f-args>)
 
 nnoremap <leader>g :GrepBuffer 
-nnoremap <leader>c :GrepBuffer <C-r><C-w><CR>
+nnoremap <silent><leader>c :GrepBuffer <C-r><C-w><CR>
 nnoremap <leader>gg :Grep 
-nnoremap <leader>cc :cclose <CR>
-nnoremap <leader>cw :topleft cw<CR>:set modifiable<CR>
+nnoremap <silent><leader>cc :cclose <CR>
+nnoremap <silent><leader>cw :topleft cw<CR>:set modifiable<CR>
 
 nnoremap <leader>xx <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
 
 " pythonでの関数移動をsearch使用で行う
-autocmd FileType python nnoremap <leader>n /def<CR>
+autocmd FileType python nnoremap <silent><leader>n /def<CR>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$

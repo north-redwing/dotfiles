@@ -7,7 +7,6 @@ repo = '$HOME/.cache/dein/repos/github.com/Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
-#-------------------- 
 # AIRLINE
 #-------------------- 
 [[plugins]]
