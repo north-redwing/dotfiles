@@ -9,6 +9,7 @@ hook_add = '''
 " denite prefix key.
 nnoremap [denite] <Nop>
 nmap <Space>f [denite]
+tmap <Space>f <ESC>[denite]
 
 " deniteを開いている間のキーマッピング
 autocmd FileType denite call s:denite_my_settings()
@@ -40,7 +41,7 @@ endfunction"}}}
 let g:denite_source_file_mru_limit = 50
 " 現在開いているファイルのディレクトリ下のファイル一覧。
 " 開いていない場合はカレントディレクトリ
-nnoremap <silent> [denite]f :<C-u>DeniteBufferDir -buffer-name=files file<CR>
+nnoremap <silent> [denite]bf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
 " バッファ一覧
 nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 " 最近使用したファイル一覧
@@ -172,59 +173,46 @@ on_source = ['unite.vim', 'denite.nvim']
 repo = 'Shougo/neoyank.vim'
 on_source = ['unite.vim', 'denite.nvim']
 
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-hook_add = '''
-if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-endif
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/usr/bin/python3'
-" defaultの20ms遅延より早く補完されるようにする
-let g:auto_complete_delay = 5
-'''
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# on_i = 1
+# hook_add = '''
+# if !has('nvim')
+#     call dein#add('roxma/nvim-yarp')
+#     call dein#add('roxma/vim-hug-neovim-rpc')
+# endif
+# let g:deoplete#enable_at_startup = 1
+# let g:python3_host_prog = '/usr/bin/python3'
+# " defaultの20ms遅延より早く補完されるようにする
+# let g:auto_complete_delay = 1
+# '''
 
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-on_i  = 1
-on_ft = ['snippet']
-depends = ['neosnippet-snippets']
-hook_add = '''
-" Shift+jでターゲットジャンプ
-imap <S-j> <Plug>(neosnippet_expand_or_jump)
-smap <S-j> <Plug>(neosnippet_expand_or_jump)
-xmap <S-j> <Plug>(neosnippet_expand_target)
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# on_i  = 1
+# on_ft = ['snippet']
+# depends = ['neosnippet-snippets']
+# hook_add = '''
+# " Shift+jでターゲットジャンプ
+# imap <S-j> <Plug>(neosnippet_expand_or_jump)
+# smap <S-j> <Plug>(neosnippet_expand_or_jump)
+# xmap <S-j> <Plug>(neosnippet_expand_target)
+# if has('conceal')
+#   set conceallevel=2 concealcursor=niv
+# endif
+# '''
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
-# これを有効にすると何故か上手く起動しない
-# on_cmd = ['Defx']
 hook_add = '''
 nnoremap [defx] <Nop>
-nmap <Space>fx [defx]
+nmap <Space>ff [defx]
+tmap <Space>ff <ESC>[defx]
 " defx.nvimを起動
 nnoremap [defx] :<C-u>Defx<CR>
 
 let g:defx_icons_enable_syntax_highlight = 1
 let g:defx_icons_column_length = 2
-call defx#custom#option('_', {
-    \ 'columns': 'indent:git:icons:filename',
-    \ 'show_ignored_files': 1,
-    \ 'split': 'floating',
-    \ 'winwidth': 120,
-    \ 'winheight': 15,
-    \ 'preview_width': 120,
-    \ 'floating_preview': v:true,
-    \ 'resume': v:true,
-    \ })
-    " \ 'vertical_preview': v:true,
-
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> <CR>
@@ -288,7 +276,7 @@ function! s:defx_my_settings() abort
     \ defx#do_action('quit')
     " カーソルを下に移動する
     nnoremap <silent><buffer><expr> j
-    \ line('.') == line('$') ? 'gg' : 'j'
+    \ line('.') == line('$') ? 'gg' 
     " カーソルを上に移動する
     nnoremap <silent><buffer><expr> k
     \ line('.') == 1 ? 'G' : 'k'
@@ -299,6 +287,19 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> p
     \ defx#do_action('preview')
 endfunction
+'''
+hook_post_source = '''
+call defx#custom#option('_', {
+    \ 'columns': 'indent:git:icons:filename',
+    \ 'show_ignored_files': 1,
+    \ 'split': 'floating',
+    \ 'winwidth': 120,
+    \ 'winheight': 15,
+    \ 'preview_width': 120,
+    \ 'floating_preview': v:true,
+    \ 'resume': v:true,
+    \ })
+    " \ 'vertical_preview': v:true,
 '''
 
 [[plugins]]
@@ -328,42 +329,42 @@ let g:deol#custom_map = {
 #-------------------- 
 # PYTHON
 #-------------------- 
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = ['python']
-on_i = 1
-hook_add = '''
-let g:jedi#use_tabs_not_buffers = 1
-" 補完の時に一番上の選択肢が自動的に選ばれないようにする
-let g:jedi#popup_select_first = 0
-" jediは非同期で遅いため.で補完を始めない
-let g:jedi#popup_on_dot = 0
-" previewを非表示
-autocmd FileType python setlocal completeopt-=preview
-let g:syntastic_python_checkers = ["flake8"] 
-
-" NOTE: subject to change!
-let g:jedi#goto_command = "<leader>d"
-let g:jedi#goto_assignments_command = "<leader>a"
-let g:jedi#goto_stubs_command = "<leader>s"
-" let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "<leader>k"
-let g:jedi#usages_command = "<leader>u"
-let g:jedi#completions_command = "<leader>p"
-let g:jedi#rename_command = "<leader>r"
-'''
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = ['python']
-hook_add = '''
-let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
-let g:deoplete#sources#jedi#extra_path = ['/usr/bin/python3']
-let g:deoplete#sources#jedi#server_timeout=100
-let g:deoplete#sources#jedi#statement_length=100
-" jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
-let g:jedi#completions_enabled = 0
-'''
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = ['python']
+# on_i = 1
+# hook_add = '''
+# let g:jedi#use_tabs_not_buffers = 1
+# " 補完の時に一番上の選択肢が自動的に選ばれないようにする
+# let g:jedi#popup_select_first = 0
+# " jediは非同期で遅いため.で補完を始めない
+# let g:jedi#popup_on_dot = 0
+# " previewを非表示
+# autocmd FileType python setlocal completeopt-=preview
+# let g:syntastic_python_checkers = ["flake8"] 
+# 
+# " NOTE: subject to change!
+# let g:jedi#goto_command = "<leader>d"
+# let g:jedi#goto_assignments_command = "<leader>a"
+# let g:jedi#goto_stubs_command = "<leader>s"
+# " let g:jedi#goto_definitions_command = "<leader>d"
+# let g:jedi#documentation_command = "<leader>k"
+# let g:jedi#usages_command = "<leader>u"
+# let g:jedi#completions_command = "<leader>p"
+# let g:jedi#rename_command = "<leader>r"
+# '''
+# 
+# [[plugins]]
+# repo = 'zchee/deoplete-jedi'
+# on_ft = ['python']
+# hook_add = '''
+# let g:deoplete#sources#jedi#python_path = $HOME . '/anaconda3/envs/RL/bin/python3'
+# let g:deoplete#sources#jedi#extra_path = ['/usr/bin/python3']
+# let g:deoplete#sources#jedi#server_timeout=100
+# let g:deoplete#sources#jedi#statement_length=100
+# " jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
+# let g:jedi#completions_enabled = 0
+# '''
 
 [[plugins]]
 repo = 'voithos/vim-python-matchit'
@@ -409,5 +410,85 @@ nmap <silent> <S-j> <Plug>(ale_next_wrap)
 '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-sources = ['G*']
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+on_i = 1
+merged = '0'
+hook_source = 'call config#init#coc#hook_source()'
+hook_post_source = '''
+"LightLineにcoc.nvimのステータスを載せます
+let g:lightline = {
+  \'active': {
+    \'right': [
+      \['coc']
+    \]
+  \},
+  \'component_function': {
+    \'coc': 'coc#status'
+  \}
+\}
+
+" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
+" unicode characters in the file autoload/float.vim
+set encoding=utf-8
+
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+" set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
+"Diagnosticsの、左横のアイコンの色設定
+highlight CocErrorSign ctermfg=15 ctermbg=196
+highlight CocWarningSign ctermfg=0 ctermbg=172
+
+nmap <silent> <leader>l :<C-u>CocList<cr>
+nmap <silent> <leader>df <Plug>(coc-definition)
+nmap <silent> <leader>rf <Plug>(coc-references)
+nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> <leader>fmt <Plug>(coc-format)
+" nmap <silent> <leader>h :<C-u>call CocAction('doHover')<cr>
+nmap <silent> <leader>h :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+'''

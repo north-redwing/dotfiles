@@ -79,6 +79,9 @@ set history=10000
 set encoding=utf-8
 set fileencoding=utf-8
 
+" 行末でもう一文字移動可能にする
+set virtualedit=onemore
+
 " insert modeでのBSの挙動
 set backspace=indent,eol,start
 
@@ -150,10 +153,14 @@ cnoremap <C-x> <Del>
 vnoremap <silent> y y`]
 
 " 行頭行末に移動
-nnoremap <S-h> ^
-nnoremap <S-l> $
-vnorema  <S-h> ^
-vnoremap <S-l> $
+nnoremap <S-h> 0
+nnoremap <S-h><S-h> ^
+nnoremap <S-l> $<Right>
+nnoremap <S-l><S-l> $
+vnorema  <S-h> 0
+vnorema  <S-h><S-h> ^
+vnoremap <S-l> $<Right>
+vnoremap <S-l><S-l> $
 
 " insert modeから抜ける
 inoremap <silent> jj <Esc>
@@ -174,7 +181,9 @@ nnoremap ZZ :xa <CR>
 " window
 nnoremap <silent><leader>ww <C-w><C-w>
 nnoremap <leader>w :w<CR>
+nnoremap <leader>wa :wa<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>qa :qa<CR>
 
 " terminal modeを抜ける
 tnoremap <silent><ESC> <C-\><C-n>
@@ -189,6 +198,7 @@ autocmd TermOpen * startinsert
 " buffer切り替え
 nnoremap <silent><leader>bp :bprev <CR>
 nnoremap <silent><leader>bn :bnext <CR>
+nnoremap <silent><leader>bd :bd <CR>
 nnoremap <silent><leader><leader> :bnext <CR>
 
 " Tabの代わりに空白を使う
@@ -293,7 +303,7 @@ nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
 
 " pythonでの関数移動をsearch使用で行う
-autocmd FileType python nnoremap <silent><leader>n /def<CR>
+" autocmd FileType python nnoremap <silent><leader>n /def<CR>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$
