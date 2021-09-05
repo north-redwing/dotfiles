@@ -88,6 +88,7 @@ set backspace=indent,eol,start
 " backup作成off
 set nobackup
 set noswapfile 
+set nowritebackup
 
 " マウスを使う
 set mouse=a
@@ -185,13 +186,24 @@ nnoremap <leader>wa :wa<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>qa :qa<CR>
 
+" macro実行
+nnoremap <leader>m qm
+nnoremap <leader>mm @m
+
+" pythonでの関数移動をsearch使用で行う
+autocmd FileType python nnoremap <silent><leader>n /def<CR>
+" ipython3を実行
+autocmd FileType python nnoremap <silent><leader>i :<C-u>belowright split term://ipython3<CR>
+
+" 下方にterminalを表示
+noremap <silent><leader>t :<C-u>belowright split term://zsh<CR>
 " terminal modeを抜ける
-tnoremap <silent><ESC> <C-\><C-n>
-tnoremap <silent>jj <C-\><C-n>
-" どのmodeでも<leader>wwで強制的にwindowを移動する
+tmap <silent><ESC> <C-\><C-n>
+tmap <silent>jj <C-\><C-n>
+" どのmodeでも<leader>wで強制的にwindowを移動する
 tmap <silent><leader>ww <C-\><C-n><C-w><C-w>
 " どのmodeでも<leader>qで強制的にwindowを消す
-tmap <silent><leader>q <C-\><C-n>q
+tmap <silent><leader>q <C-\><C-n>:q<CR>
 " defaultでinsert modeで入る
 autocmd TermOpen * startinsert
 
@@ -233,13 +245,15 @@ nnoremap <S-x> "_X
 nnoremap s "_s
 
 " returnでnormal modeのまま空白行挿入
-nnoremap <CR> A<CR><ESC>
-nnoremap <leader><CR> <Up>A<CR><ESC>
+nnoremap <CR> A<CR><Up><ESC>
+nnoremap <leader><CR> <Up>A<CR><Down><ESC>
 
 " 数字の増減
 nnoremap + <C-a>
 nnoremap - <C-x>
 
+" 置換時にインタラクティブに表示
+set inccommand=split
 " 置換の際にgオプションをdefaultで有効
 set gdefault
 " 大文字小文字を無視
@@ -299,11 +313,9 @@ nnoremap <silent><leader>cc :cclose <CR>
 nnoremap <silent><leader>cw :topleft cw<CR>:set modifiable<CR>
 
 nnoremap <leader>xx <Nop>
+nnoremap <leader>x <Nop>
 nnoremap <leader>cp :cprev <CR>
 nnoremap <leader>cn :cnext <CR>
-
-" pythonでの関数移動をsearch使用で行う
-" autocmd FileType python nnoremap <silent><leader>n /def<CR>
 
 " C, YをDと同じ挙動にする
 nnoremap <S-c> c$

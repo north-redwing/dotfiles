@@ -22,6 +22,8 @@ function! s:denite_my_settings()"{{{
     \ denite#do_map('do_action', 'preview')
     nnoremap <silent><buffer><expr> q
     \ denite#do_map('quit')
+    nnoremap <silent><buffer><expr> <ESC>
+    \ denite#do_map('quit')
     nnoremap <silent><buffer><expr> <leader>cc
     \ denite#do_map('quit')
     nnoremap <silent><buffer><expr> i
@@ -39,7 +41,7 @@ endfunction"}}}
 " denite general settings
 " 最近開いたファイル履歴の保存数
 let g:denite_source_file_mru_limit = 50
-" 現在開いているファイルのディレクトリ下のファイル一覧。
+" 現在開いているファイルのディレクトリ下のファイル一覧
 " 開いていない場合はカレントディレクトリ
 nnoremap <silent> [denite]bf :<C-u>DeniteBufferDir -buffer-name=files file<CR>
 " バッファ一覧
@@ -48,6 +50,8 @@ nnoremap <silent> [denite]b :<C-u>Denite buffer<CR>
 nnoremap <silent> [denite]m :<C-u>Denite file_mru<CR>
 " registerからpaste
 nnoremap <silent> [denite]y :<C-u>Denite neoyank<CR> 
+" commandの履歴
+nnoremap <silent> [denite]h :<C-u>Denite command_history<CR>
 
 " grep
 command! -nargs=? DGrep call s:DGrep(<f-args>)
@@ -242,10 +246,10 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> mkdir
     \ defx#do_action('new_directory')
     " ファイルを削除する
-    nnoremap <silent><buffer><expr> rm
+    nnoremap <silent><buffer><expr> dd
     \ defx#do_action('remove')
     " ファイル名を変更する
-    nnoremap <silent><buffer><expr> rename
+    nnoremap <silent><buffer><expr> r
     \ defx#do_action('rename')
     " ツリーを表示/非表示する
     nnoremap <silent><buffer><expr> t
@@ -257,14 +261,15 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> yy
     \ defx#do_action('yank_path')
     " 隠しファイルを表示/非表示する
-    nnoremap <silent><buffer><expr> .
+    nnoremap <silent><buffer><expr> ;
     \ defx#do_action('toggle_ignored_files')
     " 親ディレクトリに移動する
-    noremap <silent><buffer><expr> up
-    \ defx#do_action('cd', ['..'])
     nnoremap <silent><buffer><expr> ~
     " ホームディレクトリに移動する
     \ defx#do_action('cd')
+    nnoremap <silent><buffer><expr> .
+    \ defx#do_action('repeat')
+
     " defx.nvimを終了する
     nnoremap <silent><buffer><expr> <Esc> 
     \ defx#do_action('quit')
@@ -272,17 +277,21 @@ function! s:defx_my_settings() abort
     \ defx#do_action('quit')
     nnoremap <silent><buffer><expr> <leader>q
     \ defx#do_action('quit')
-    nnoremap <silent><buffer><expr> exit
-    \ defx#do_action('quit')
-    " カーソルを下に移動する
+
+    " hjkl移動
+    noremap <silent><buffer><expr> h
+    \ defx#do_action('cd', ['..'])
     nnoremap <silent><buffer><expr> j
-    \ line('.') == line('$') ? 'gg' 
-    " カーソルを上に移動する
+    \ line('.') == line('$') ? 'gg': 'j'
     nnoremap <silent><buffer><expr> k
     \ line('.') == 1 ? 'G' : 'k'
+    nnoremap <silent><buffer><expr> l
+    \ defx#do_action('drop')
+
     " Neovim上のカレントディレクトリを変更する
     nnoremap <silent><buffer><expr> cd
     \ defx#do_action('change_vim_cwd')
+
     " fileをpreviewする
     nnoremap <silent><buffer><expr> p
     \ defx#do_action('preview')
@@ -383,6 +392,14 @@ repo = 'kana/vim-textobj-user'
 on_ft = ['python']
 sources = ['bps/vim-textobj-python']
 
+[[plugins]]
+repo = 'KangOl/vim-pudb'
+sources = ['python']
+hook_add = '''
+nnoremap <silent><F8> :TogglePudbBreakPoint<CR>
+inoremap <silent><F8> <ESC>:TogglePudbBreakPoint<CR>a
+'''
+
 #-------------------- 
 # OTHERS
 #-------------------- 
@@ -414,34 +431,9 @@ repo = 'neoclide/coc.nvim'
 rev = 'release'
 on_i = 1
 merged = '0'
-hook_source = 'call config#init#coc#hook_source()'
+# hook_source = 'call config#init#coc#hook_source()'
+# hook_add = '''
 hook_post_source = '''
-"LightLineにcoc.nvimのステータスを載せます
-let g:lightline = {
-  \'active': {
-    \'right': [
-      \['coc']
-    \]
-  \},
-  \'component_function': {
-    \'coc': 'coc#status'
-  \}
-\}
-
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
-set encoding=utf-8
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-" set cmdheight=2
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -467,8 +459,12 @@ nmap <silent> <leader>df <Plug>(coc-definition)
 nmap <silent> <leader>rf <Plug>(coc-references)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 nmap <silent> <leader>fmt <Plug>(coc-format)
-" nmap <silent> <leader>h :<C-u>call CocAction('doHover')<cr>
+xmap <silent> <leader>fmt <Plug>(coc-format)
 nmap <silent> <leader>h :call <SID>show_documentation()<CR>
+nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <space>r  :<C-u>CocListResume<CR>
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -479,16 +475,41 @@ function! s:show_documentation()
   endif
 endfunction
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" tabでsnippet移動
+" inoremap <silent><expr> <TAB>
+"     \ pumvisible() ? coc#_select_confirm() :
+"     \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+"     \ <SID>check_back_space() ? "\<TAB>" :
+"     \ coc#refresh()
+"
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" S-jkでsnippet移動
+" Use <C-l> for trigger snippet expand.
+" imap <S-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <S-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<s-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<s-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <S-j> <Plug>(coc-snippets-expand-jump)
+
+" Use <leader>x for convert visual selected code to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
+
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 '''
