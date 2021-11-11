@@ -1,20 +1,20 @@
-[[plugins]]
-repo = 'davidhalter/jedi-vim'
-on_ft = ['python']
-on_i = 1
-hook_add = '''
-" 補完のコマンドmapping
-let g:jedi#completions_command = "<leader>p"
-let g:jedi#use_tabs_not_buffers = 1
-" 補完の時に一番上の選択肢が自動的に選ばれないようにする
-let g:jedi#popup_select_first = 0
-" .で補完を始めない
-let g:jedi#popup_on_dot = 0
-let g:jedi#documentation_command = "<leader>k"
-" previewを非表示
-autocmd FileType python setlocal completeopt-=preview
-let g:syntastic_python_checkers = ["flake8"] 
-'''
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = ['python']
+# on_i = 1
+# hook_add = '''
+# " 補完のコマンドmapping
+# let g:jedi#completions_command = "<leader>p"
+# let g:jedi#use_tabs_not_buffers = 1
+# " 補完の時に一番上の選択肢が自動的に選ばれないようにする
+# let g:jedi#popup_select_first = 0
+# " .で補完を始めない
+# let g:jedi#popup_on_dot = 0
+# let g:jedi#documentation_command = "<leader>k"
+# " previewを非表示
+# autocmd FileType python setlocal completeopt-=preview
+# let g:syntastic_python_checkers = ["flake8"] 
+# '''
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -109,16 +109,16 @@ nmap <S-j> <Plug>(ale_previous_wrap)
 nmap <S-k> <Plug>(ale_next_wrap)
 '''
 
-[[plugins]]
-repo = 'deoplete-plugins/deoplete-jedi'
-on_ft = ['python']
-on_i = 1
-hook_add = '''
-let g:deoplete#sources#jedi#server_timeout=100
-let g:deoplete#sources#jedi#statement_length=100
-" jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
-let g:jedi#completions_enabled = 0
-'''
+# [[plugins]]
+# repo = 'deoplete-plugins/deoplete-jedi'
+# on_ft = ['python']
+# on_i = 1
+# hook_add = '''
+# let g:deoplete#sources#jedi#server_timeout=100
+# let g:deoplete#sources#jedi#statement_length=100
+# " jedi本体の補完は切る（deoplete-jediで非同期処理をしてくれるため）
+# let g:jedi#completions_enabled = 0
+# '''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim''

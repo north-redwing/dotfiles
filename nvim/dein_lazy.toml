@@ -114,7 +114,7 @@ call denite#custom#option('_', {
     \ 'max_dynamic_update_candidates': 100000,
     \ 'prompt': '$ ',
     \ 'split': has('nvim') ? 'floating_relative_cursor' : 'horizontal',
-    \ 'winwidth': 120,
+    \ 'winwidth': 200,
     \ 'winheight': 15,
     \ 'preview_width': 120,
     \ })
@@ -302,11 +302,12 @@ call defx#custom#option('_', {
     \ 'columns': 'indent:git:icons:filename',
     \ 'show_ignored_files': 1,
     \ 'split': 'floating',
-    \ 'winwidth': 120,
+    \ 'winwidth': 200,
     \ 'winheight': 15,
     \ 'preview_width': 120,
     \ 'floating_preview': v:true,
     \ 'resume': v:true,
+    \ 'toggle': 1,
     \ })
     " \ 'vertical_preview': v:true,
 '''
@@ -317,7 +318,7 @@ on_cmd = ['Deol']
 hook_add = '''
 nnoremap [deol] <Nop>
 nmap <Space>ft [deol]
-nnoremap [deol] :<C-u>Deol -split=floating -winwidth=120 -winheight=25<CR>
+nnoremap [deol] :<C-u>Deol -split=floating -winwidth=200 -winheight=25<CR>
 '''
 hook_post_source = '''
 let g:deol#custom_map = {
@@ -396,8 +397,8 @@ sources = ['bps/vim-textobj-python']
 repo = 'KangOl/vim-pudb'
 sources = ['python']
 hook_add = '''
-nnoremap <silent><F8> :TogglePudbBreakPoint<CR>
-inoremap <silent><F8> <ESC>:TogglePudbBreakPoint<CR>a
+nnoremap <F8> :TogglePudbBreakPoint<CR>
+inoremap <F8> <ESC>:TogglePudbBreakPoint<CR>a
 '''
 
 #-------------------- 
@@ -458,8 +459,8 @@ nmap <silent> <leader>l :<C-u>CocList<cr>
 nmap <silent> <leader>df <Plug>(coc-definition)
 nmap <silent> <leader>rf <Plug>(coc-references)
 nmap <silent> <leader>rn <Plug>(coc-rename)
-nmap <silent> <leader>fmt <Plug>(coc-format)
-xmap <silent> <leader>fmt <Plug>(coc-format)
+" nmap <silent> <leader>fmt <Plug>(coc-format)
+" xmap <silent> <leader>fmt <Plug>(coc-format)
 nmap <silent> <leader>h :call <SID>show_documentation()<CR>
 nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
@@ -493,16 +494,16 @@ let g:coc_snippet_next = '<tab>'
 " Use <C-l> for trigger snippet expand.
 " imap <S-l> <Plug>(coc-snippets-expand)
 
-" Use <C-j> for select text for visual placeholder of snippet.
+" Use <S-j> for select text for visual placeholder of snippet.
 vmap <S-j> <Plug>(coc-snippets-select)
 
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+" Use <S-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<s-j>'
 
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+" Use <S-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<s-k>'
 
-" Use <C-j> for both expand and jump (make expand higher priority.)
+" Use <S-j> for both expand and jump (make expand higher priority.)
 imap <S-j> <Plug>(coc-snippets-expand-jump)
 
 " Use <leader>x for convert visual selected code to snippet

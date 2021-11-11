@@ -199,7 +199,7 @@ autocmd FileType python nnoremap <silent><leader>i :<C-u>belowright split term:/
 noremap <silent><leader>t :<C-u>belowright split term://zsh<CR>
 " terminal modeを抜ける
 tmap <silent><ESC> <C-\><C-n>
-tmap <silent>jj <C-\><C-n>
+tmap <silent>jk <C-\><C-n>
 " どのmodeでも<leader>wで強制的にwindowを移動する
 tmap <silent><leader>ww <C-\><C-n><C-w><C-w>
 " どのmodeでも<leader>qで強制的にwindowを消す
@@ -244,9 +244,18 @@ nnoremap x "_x
 nnoremap <S-x> "_X
 nnoremap s "_s
 
-" returnでnormal modeのまま空白行挿入
-nnoremap <CR> A<CR><Up><ESC>
-nnoremap <leader><CR> <Up>A<CR><Down><ESC>
+" <leader>o/Oでnormal modeのまま空白行挿入
+nnoremap <leader>o o<ESC>
+nnoremap <leader><CR> o<ESC>
+nnoremap <leader>O O<ESC>
+nnoremap <leader><CR><CR> O<ESC>
+
+" Tab, S-Tabでindent変更
+" nnoremap <Tab> >>
+" nnoremap <S-Tab> <<
+
+" 全行format
+nnoremap <leader>fmt gg=G
 
 " 数字の増減
 nnoremap + <C-a>
